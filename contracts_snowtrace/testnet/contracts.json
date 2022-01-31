@@ -7895,3 +7895,6 @@
 {"address": "0xAe9fcDA562A0e73C861Fa6BD0d1b83B675a5D4bd", "name": "DR_Sale", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "1/27/2022"}
 {"address": "0xDf6831678902d40aF7fF2197bFAC293D85A545A6", "name": "DR_Registry", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "1/27/2022"}
 {"address": "0xdc2c4db43facf6a957ae3d1700526daac448575e", "name": "StandardToken", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "1/27/2022"}
+{"address": "0xDEaD46483dc82dDe126Fa4eFD2D1806f361A5f40", "name": "PocketIndex", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "-", "date": "1/31/2022"}
+{"address": "0xcDa72a885B41BE06Abd1A51c99c301Abb6dbD90b", "name": "PocketIndex", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "-", "date": "1/31/2022"}
+{"address": "0x3e55c18c6b533f031b51a611c5c0c519346086c6", "name": "ShruteBuck", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "1/31/2022"}
