@@ -10942,3 +10942,5 @@
 {"address": "0x191e4b9dbe30747ff02c039beca45071e4a56fd0", "name": "STreasury", "compiler": "0.6.12", "balance": "0 AVAX", "txcount": 2, "settings": "", "date": "2/2/2022"}
 {"address": "0x524980dda82f6ae3830af2eab0ab4d3feea43c4e", "name": "DEGEN2222", "compiler": "0.8.11", "balance": "0.125228070805543326 AVAX", "txcount": 138, "settings": "", "date": "2/2/2022"}
 {"address": "0x623893ca6e8963b637e9e69453192105cc83aff1", "name": "SnakeFinanceToken", "compiler": "0.6.12", "balance": "0 AVAX", "txcount": 18, "settings": "", "date": "2/2/2022"}
+{"address": "0x6447c868b938494B10e60Df8d45bB0b55F4ccf90", "name": "DaiPrinter", "compiler": "0.8.4", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "2/2/2022"}
+{"address": "0xCe298abF6E0B57F2b706d56C1E42320Fe18b1b3c", "name": "GainzNFT", "compiler": "0.8.4", "balance": "0 AVAX", "txcount": 2, "settings": "", "date": "2/2/2022"}
