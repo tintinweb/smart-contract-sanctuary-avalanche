@@ -8028,3 +8028,19 @@
 {"address": "0x62a52483EB1DcB706054Ae6164f1221abE9f5aa8", "name": "UniswapV2Factory", "compiler": "0.5.16", "balance": "-", "txcount": 0, "settings": "", "date": "2/1/2022"}
 {"address": "0x9c041B96ffDfe55F99a2A2334731d21de11E55C5", "name": "SpoonflowerNFT", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "2/1/2022"}
 {"address": "0x71Aa986A071bE897424d5699fB6DE4E81b2c2f53", "name": "SpoonflowerMarket", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "2/1/2022"}
+{"address": "0x98D66E46B54928d1071Bbb3B068e400161220319", "name": "XWife", "compiler": "0.8.4", "balance": "0 AVAX", "txcount": 0, "settings": "", "date": "2/2/2022"}
+{"address": "0x7888d658ce112f76ee59dd1f16c4129bac97e859", "name": "ERC20", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "2/2/2022"}
+{"address": "0xfbEfDbef5798751e579aBB056c1593379bfd265b", "name": "FarmingPool", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "2/2/2022"}
+{"address": "0x5e2cfc3baea5a90afea0f992415fc9f26ca7d478", "name": "MBSA", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "2/2/2022"}
+{"address": "0x5fe18bc6f2b93662714151734f67b57545d32f09", "name": "Points", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "2/2/2022"}
+{"address": "0x8e48e3e4db2d927bc60c757254f33d428dc96879", "name": "Points", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "2/2/2022"}
+{"address": "0x6844b54e51ac0bea04f4aa6351d5f83acdf9f658", "name": "Points", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "2/2/2022"}
+{"address": "0x0f11B3Bc399837cf2B1CB467936Df0a69c8818eE", "name": "IterativeVestingFarm", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "2/2/2022"}
+{"address": "0x1349F1DF39329a437713E836B88034C021003727", "name": "LinearVestingFarm", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "2/2/2022"}
+{"address": "0x3C2bb97483c7ab24827281cf1cf5D7C0ED0d9cbE", "name": "Daosphere", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "-", "date": "2/2/2022"}
+{"address": "0xb04239a4a7ece9f1a7346b6d7549688071b91ffb", "name": "CopperProxy", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "2/2/2022"}
+{"address": "0xE71FDa78479802DD9BeF0fe3323a14C502405920", "name": "NoProtocolFeeLiquidityBootstrappingPoolFactory", "compiler": "0.7.1", "balance": "0 AVAX", "txcount": 0, "settings": "", "date": "2/2/2022"}
+{"address": "0xf374c4714bf5b991d1ceedfbd13815192a266e8c", "name": "Points", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "2/2/2022"}
+{"address": "0x026454917503E515B85d1b62319600e25513200D", "name": "Noonercoin", "compiler": "0.5.0", "balance": "-", "txcount": 0, "settings": "", "date": "2/2/2022"}
+{"address": "0x098A16159822723Ba8e52CB5Ebc28986f20A5626", "name": "Noonercoin", "compiler": "0.5.0", "balance": "-", "txcount": 0, "settings": "", "date": "2/2/2022"}
+{"address": "0x6fd4EE36bCaf53bE8aBB1A717d8ADA19018849D2", "name": "SaleAvat", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "2/2/2022"}
