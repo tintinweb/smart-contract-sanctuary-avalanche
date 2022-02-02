@@ -8080,3 +8080,6 @@
 {"address": "0xbaa906f529685571ec70145d350755d5fb6fd840", "name": "AvaSharks", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "2/2/2022"}
 {"address": "0xB882155B6Cb6B1233239148c9f8C877f60Fc39a8", "name": "BuddySystem", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "-", "date": "2/2/2022"}
 {"address": "0x32990c337509047E919016Cb9bA528653827d09E", "name": "Sample", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "-", "date": "2/2/2022"}
+{"address": "0xfDc7AFa4F10080da5170267C7a11B4206aa6e363", "name": "CrutonERC20Token", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "2/2/2022"}
+{"address": "0x4Be626a48ddBef7D7F99Bd6BF4A338f69674116B", "name": "Vault_USDC", "compiler": "0.8.1", "balance": "-", "txcount": 0, "settings": "", "date": "2/2/2022"}
+{"address": "0x219098fa817f3f4ae9abb876a080f5b986e29eff", "name": "ISLANDS", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "2/2/2022"}
