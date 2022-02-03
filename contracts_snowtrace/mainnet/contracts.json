@@ -11043,3 +11043,15 @@
 {"address": "0x5F1d85FEbe04fc9C5668e3794d7A4A5543DB9A2a", "name": "Vault_USDC", "compiler": "0.8.1", "balance": "0 AVAX", "txcount": 585, "settings": "", "date": "2/2/2022"}
 {"address": "0xc57bee3c2fff8a548c7a7b8e6c323a850feae255", "name": "Paymates", "compiler": "0.8.7", "balance": "185 wei", "txcount": 334, "settings": "", "date": "2/2/2022"}
 {"address": "0xf984e021E86C583112751Cd4bD9508567b4acE42", "name": "Token", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 35, "settings": "", "date": "2/2/2022"}
+{"address": "0x44F8c64856ea948D502DBEE084d3D6293fA291c8", "name": "SnowGlobePngAvaxAvxt", "compiler": "0.6.7", "balance": "0 AVAX", "txcount": 41, "settings": "", "date": "2/3/2022"}
+{"address": "0x678C00250f9BA6F86857D72B1f31F42984bB6926", "name": "SnowGlobePngAvaxIme", "compiler": "0.6.7", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "2/3/2022"}
+{"address": "0xD99f62d69A053aBe9c2a4fF0ad12a6E8dF2e8f0a", "name": "Router", "compiler": "0.8.11", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "2/3/2022"}
+{"address": "0x394B8864cfEDf4Af0234da34bEc87502F849c369", "name": "StrategyPngAvaxBnb", "compiler": "0.6.7", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "2/3/2022"}
+{"address": "0x7F8E7a8Bd63A113B202AE905877918Fb9cA13091", "name": "SnowGlobePngAvaxAaveE", "compiler": "0.6.7", "balance": "0 AVAX", "txcount": 133, "settings": "", "date": "2/3/2022"}
+{"address": "0xb69F90233cB50B36BE81f6678d6621D8606a342f", "name": "StrategyPngAvaxAaveE", "compiler": "0.6.7", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "2/3/2022"}
+{"address": "0x1C7359725E2EAD20FEFC71121e1a96451f66f829", "name": "StrategyPngAvaxYdr", "compiler": "0.6.7", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "2/3/2022"}
+{"address": "0x221c52bc7d470386b652feb78f9e91977cc0d9e0", "name": "Token", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "2/3/2022"}
+{"address": "0xc819b69F92DbAfC5Afb4aE9f01D825c7c9dd1290", "name": "StrategyPngAvaxMoney", "compiler": "0.6.7", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "2/3/2022"}
+{"address": "0xFAcA0F15887695411238C520219926A230bD364E", "name": "StrategyPngAvaxIme", "compiler": "0.6.7", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "2/3/2022"}
+{"address": "0x10Df5eA0e38F1bE9625d5F6c3b8545902a408511", "name": "StrategyPngAvaxAvxt", "compiler": "0.6.7", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "2/3/2022"}
+{"address": "0x3F1860ae3F7EDA310cD945ACf59045774dB5c580", "name": "FIAT", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "2/3/2022"}
