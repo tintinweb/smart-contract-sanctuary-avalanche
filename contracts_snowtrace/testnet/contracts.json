@@ -8083,3 +8083,10 @@
 {"address": "0xfDc7AFa4F10080da5170267C7a11B4206aa6e363", "name": "CrutonERC20Token", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "2/2/2022"}
 {"address": "0x4Be626a48ddBef7D7F99Bd6BF4A338f69674116B", "name": "Vault_USDC", "compiler": "0.8.1", "balance": "-", "txcount": 0, "settings": "", "date": "2/2/2022"}
 {"address": "0x219098fa817f3f4ae9abb876a080f5b986e29eff", "name": "ISLANDS", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "2/2/2022"}
+{"address": "0xeb1bf4398cc245002CD24829b41477c53B5002f4", "name": "BSGGDistributionToken", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "2/3/2022"}
+{"address": "0x26175f35b26e8bd3aba69286bedbb2fc7e38fff1", "name": "NodePuppy", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "2/3/2022"}
+{"address": "0xa37FC2a3b06c515F250993F053c81FBF3475C427", "name": "StakingRewards", "compiler": "0.5.16", "balance": "-", "txcount": 0, "settings": "", "date": "2/2/2022"}
+{"address": "0xA62Dd0bDae760A3b5a43186E6Fd2c07B0525C0D9", "name": "StakingRewardsFactory", "compiler": "0.5.16", "balance": "-", "txcount": 0, "settings": "", "date": "2/2/2022"}
+{"address": "0x18b8feeeb6cc233d88d8ebae9e1ea60507b6aec5", "name": "GLOBAL", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "2/2/2022"}
+{"address": "0x54eFc25b4B3d0f08494B685F41ccd834bb95AA23", "name": "LockToken", "compiler": "0.6.2", "balance": "-", "txcount": 0, "settings": "-", "date": "2/2/2022"}
+{"address": "0x4E56731Df5AC08c61c308028d09387A5b5B3000b", "name": "CelodyToken", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "2/2/2022"}
