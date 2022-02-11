@@ -11929,3 +11929,7 @@
 {"address": "0xb59c91ee25f37c6447154491add1cca9b7c823cd", "name": "GOKUINU", "compiler": "0.8.7", "balance": "0.318830216940621182 AVAX", "txcount": 89, "settings": "", "date": "2/10/2022"}
 {"address": "0x889b9a07333b1d57c72ceedc307839cc58387654", "name": "VEGETAPRINTER", "compiler": "0.8.7", "balance": "4 wei", "txcount": 109, "settings": "", "date": "2/10/2022"}
 {"address": "0xedDd1B6c51749183595D2c6e6140B73dE086ac68", "name": "CompoundMultiRewardAvalancheStrategy", "compiler": "0.8.3", "balance": "0 AVAX", "txcount": 4, "settings": "", "date": "2/11/2022"}
+{"address": "0xEa65030367124C551E93cd333a2Cbffd205A7f6F", "name": "PriceCalculator", "compiler": "0.8.4", "balance": "0 AVAX", "txcount": 2, "settings": "", "date": "2/11/2022"}
+{"address": "0xf4BB5824F3e5b6314e1c0A8BE60c733B3dB53786", "name": "CompoundMultiRewardAvalancheStrategy", "compiler": "0.8.3", "balance": "0 AVAX", "txcount": 5, "settings": "", "date": "2/11/2022"}
+{"address": "0xec8A03954243091b7Fbbd4751A48e332677CF62E", "name": "PaymentSplitter", "compiler": "0.8.4", "balance": "0 AVAX", "txcount": 2, "settings": "", "date": "2/11/2022"}
+{"address": "0x8afd801AB5249e8B8afd8155e1f41c4137177042", "name": "THUGDOGE", "compiler": "0.8.9", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "2/11/2022"}
