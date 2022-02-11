@@ -11984,3 +11984,4 @@
 {"address": "0x0d0d1d3a49b8f7ee53da75969272928ffd031616", "name": "WaifusToken", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 7, "settings": "", "date": "2/11/2022"}
 {"address": "0xd2703aDE1c9AE2745e7Db073Be6e8160859Cbb00", "name": "CryptoWaifus", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 2, "settings": "", "date": "2/11/2022"}
 {"address": "0x101112e8B6D5EA830A33Eee859C30DDa19593265", "name": "StakingWaifu", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "2/11/2022"}
+{"address": "0x311699b78ba13520c586663c7d3ad8faf08babbb", "name": "MilkPrinter", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "2/11/2022"}
