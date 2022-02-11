@@ -8978,3 +8978,4 @@
 {"address": "0x07096Df996E40c4CE3aCfaab1C718C8af8E1Ea33", "name": "NFT", "compiler": "0.8.11", "balance": "0 AVAX", "txcount": 0, "settings": "", "date": "2/11/2022"}
 {"address": "0x67d2b6aec35177f47b28cc4d3301cb18227cd827", "name": "MOONBEAST", "compiler": "0.8.5", "balance": "-", "txcount": 0, "settings": "-", "date": "2/11/2022"}
 {"address": "0x580c1aeae0fa2dddc22c6f0eb46f77ff459f9061", "name": "PartnerRewardPool", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "2/11/2022"}
+{"address": "0x633684051d4DfA0AC9A27874d7Edcbfb921014d3", "name": "TokenSoftTokenV2", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "2/11/2022"}
