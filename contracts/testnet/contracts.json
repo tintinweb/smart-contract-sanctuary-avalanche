@@ -9056,3 +9056,13 @@
 {"address": "0xdf229892a197f692decbba84b2dfa3f50980927e", "name": "ThortlesNFTClub", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "2/11/2022"}
 {"address": "0xadf9AEd3421DC868C256746B41E2DA60f4aB06cE", "name": "Universe", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "2/11/2022"}
 {"address": "0x09bc88f6413c72d4263bff1b1830f8100efb75c2", "name": "ThortlesNFTClub", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "2/11/2022"}
+{"address": "0xf1dbe4aa3cee7fd490f2ca3670a074d2d3be349d", "name": "EvoxCapital", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "2/12/2022"}
+{"address": "0x3f1711ad75cd62d1f90f10928e2bad28bd3d6f35", "name": "TransparentUpgradeableProxy", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "2/12/2022"}
+{"address": "0x4402c1706551f7528db48fd576495f38c9be4bd2", "name": "Ballot", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "2/12/2022"}
+{"address": "0x57e29c302cf7236ac1a59c5e4b2e4044daa128ac", "name": "ProxyAdmin", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "-", "date": "2/12/2022"}
+{"address": "0x547078023bf2371c30b82f6a99bdfd765db5cee5", "name": "TheProperty", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "2/12/2022"}
+{"address": "0x2cb23d085bbc199d47f3ee3962f51da6e1cb8907", "name": "PropertyTypeLib", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "2/12/2022"}
+{"address": "0x89d97f74d291fd11996156240e0f02a59badbfab", "name": "PropertyLib", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "2/12/2022"}
+{"address": "0xf49B1b3807876ed7EBFC73164D28eAE1A265b800", "name": "GLXShip", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "2/12/2022"}
+{"address": "0x0f0c8ce47d536d67e30a8c9aec84632bd3eeaf74", "name": "PancakePredictionV2", "compiler": "0.8.7", "balance": "4.015 AVAX", "txcount": 0, "settings": "", "date": "2/12/2022"}
+{"address": "0x64878b8fad43f3623d1ad6522a31ca01ff58d9b2", "name": "Racing_Game", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "2/12/2022"}
