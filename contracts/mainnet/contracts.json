@@ -12163,3 +12163,4 @@
 {"address": "0xF52437d816a57452aEfE297d5F546E9E0C0AF95A", "name": "CryptoBowlAVAX", "compiler": "0.8.9", "balance": "0 AVAX", "txcount": 63, "settings": "", "date": "2/12/2022"}
 {"address": "0x9b5d34d77d8e4b07fd1b4a9ec1e37663f753d77e", "name": "MagiaPrinter", "compiler": "0.8.7", "balance": "0.139329651803876411 AVAX", "txcount": 280, "settings": "", "date": "2/12/2022"}
 {"address": "0x978a7c975b1e1e8f7c303a114a73aadeb58493d4", "name": "ZshareRewardPool", "compiler": "0.6.12", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "2/12/2022"}
+{"address": "0xe1286667f8fC40fc9Bc6d2bAa7D6Ded57C073304", "name": "SwapWSFortForUSDC", "compiler": "0.8.2", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "2/13/2022"}
