@@ -9105,3 +9105,15 @@
 {"address": "0xcab6FB312cAd146e96A37ff9B87Bd0fC9AAA255e", "name": "Crucible", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "2/12/2022"}
 {"address": "0xe3F21Ee108aB8841Fb281fC7B2DB604B414E27EE", "name": "TransmuterV1", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "2/12/2022"}
 {"address": "0x18330473003Df98fECF09BD5aAf0A245915bF037", "name": "SperaV5", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "2/12/2022"}
+{"address": "0x912eec8dc42d95895bfb7c617275043e65fad977", "name": "Presale", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "2/13/2022"}
+{"address": "0x66b1F09448abE52B43040Eb6779AEF338C0E9825", "name": "Create2Impl", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "-", "date": "2/13/2022"}
+{"address": "0x5226AE7C172f99B090fA7c6D76B604bf20e0c2c7", "name": "GLXShip", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "2/13/2022"}
+{"address": "0xcb143a8a0ca98d094c630d89b0d4f098cc016344", "name": "BridgeToken", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "2/13/2022"}
+{"address": "0x73b6Bafe3FC89281623c4B6dae08d3d343094846", "name": "GLXShip", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "2/13/2022"}
+{"address": "0x82bac4a0ee3653baa0e4d2190b44a9924eb4a963", "name": "Avalant", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "2/13/2022"}
+{"address": "0x9056b5B0A89286C8E52d76e2ba4ab0A0995BD99F", "name": "YATMarket", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "2/13/2022"}
+{"address": "0xf201Db933f0F7281dE9d64A60ACD1e05da04de40", "name": "NFT", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "2/13/2022"}
+{"address": "0xE86D12191239ce25405803090111C28ce9EE56E8", "name": "NFT", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "2/12/2022"}
+{"address": "0xd2b9388fbe596235d9fce19c681dbbc3036ce64f", "name": "TerritoryUnitGameStatePredictionComponent", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "-", "date": "2/12/2022"}
+{"address": "0x02e5ff797fed40033d75478578222eeb6362fbca", "name": "TerritoryUnitGameStatePredictionComponent", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "-", "date": "2/12/2022"}
+{"address": "0xed0de8f67231de437f6183d025efbdf6b3816afe", "name": "TerritoryUnitGameStatePredictionComponent", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "-", "date": "2/12/2022"}
