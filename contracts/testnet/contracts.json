@@ -9202,3 +9202,5 @@
 {"address": "0x107C2b160165f097b31060C12e646808C3bdFe04", "name": "Glow", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "-", "date": "2/13/2022"}
 {"address": "0x7aed9e5a1da0b9feeff61ecdce8103d4afb03e9b", "name": "Multicall2", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "2/13/2022"}
 {"address": "0x96c8187E64985B2B7B20dE6dc0744400Fa7eFad2", "name": "AvaxWarriorsUpgradeSeasonOne", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "2/13/2022"}
+{"address": "0x5dad38e72261399581d76596138b9c9661eaebdc", "name": "Voting", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "2/14/2022"}
+{"address": "0xaab4f847998a1e1ef65fbfe2c7ed09005d8254fd", "name": "VoterStaking", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "2/14/2022"}
