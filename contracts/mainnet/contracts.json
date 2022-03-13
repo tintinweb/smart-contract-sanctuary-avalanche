@@ -15278,3 +15278,9 @@
 {"address": "0xF3382f4A0A06497d345Fcc8d7A7728d76DD320D1", "name": "AvalancheYields", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "3/13/2022"}
 {"address": "0x492838dbde4c109d09cd1a7dbe704ec4eabb6186", "name": "TNODES", "compiler": "0.8.11", "balance": "0 AVAX", "txcount": 5, "settings": "", "date": "3/13/2022"}
 {"address": "0x3f73532fEec1036e7DF22ec201B9BAFFDC4b5079", "name": "AVAXFomo", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "3/13/2022"}
+{"address": "0x8a7d7cf94aa008079597170464c74194581d4834", "name": "RoyaltyFeeManager", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "3/13/2022"}
+{"address": "0x6678478829c0853f19cf9d06a96dfadc8f9e95df", "name": "StrategyAnyItemFromCollectionForFixedPrice", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "3/13/2022"}
+{"address": "0x7777ae478aca2c41606f9cbc30f4c6a31e2785d0", "name": "StrategyStandardSaleForFixedPrice", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "3/13/2022"}
+{"address": "0xd40835ec8bfe05a58c211dd2628f517f5ffb3d3b", "name": "TransferManagerERC721", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "3/13/2022"}
+{"address": "0x9781d6c97926edd9a336439a59f76c0df8c78b4e", "name": "TransferManagerERC1155", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "3/13/2022"}
+{"address": "0x5d973792accf00811486d5649ebb3a07578e8391", "name": "TransferSelectorNFT", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "3/13/2022"}
