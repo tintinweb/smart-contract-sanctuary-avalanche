@@ -15492,3 +15492,10 @@
 {"address": "0x7d697b86B981D3bA914357485ed23D49CE0a4C1D", "name": "FIEFStoreTransactor", "compiler": "0.8.4", "balance": "0 AVAX", "txcount": 118, "settings": "", "date": "3/14/2022"}
 {"address": "0xb603F635CB4623f297376536C129024392Ddd40c", "name": "IGM", "compiler": "0.8.4", "balance": "0 AVAX", "txcount": 13, "settings": "", "date": "3/14/2022"}
 {"address": "0xf361d52f96a1502f239231fc872255a496e5b14c", "name": "Contract", "compiler": "0.8.12", "balance": "31.3951599727346214 AVAX", "txcount": 8, "settings": "", "date": "3/14/2022"}
+{"address": "0x16ED963F229230f27Aa67c794AeA0781462072dC", "name": "AutoLiquidity", "compiler": "0.8.9", "balance": "0 AVAX", "txcount": 2, "settings": "", "date": "3/15/2022"}
+{"address": "0xb6F530895D46126953688b922BeE1fc2E92f3C11", "name": "MasterChefV2", "compiler": "0.8.9", "balance": "0 AVAX", "txcount": 11, "settings": "", "date": "3/15/2022"}
+{"address": "0xD835083992b60AfF06FAEF5d733cca994fb6cD29", "name": "BanksyTokenV2", "compiler": "0.8.9", "balance": "0 AVAX", "txcount": 7, "settings": "-", "date": "3/15/2022"}
+{"address": "0x968E94968e314aC3ED8B8C882b4D9Af23B8764b9", "name": "TreasuryUtil", "compiler": "0.8.9", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "3/15/2022"}
+{"address": "0x3EddCCDdb88c809c2221F56CE88e7C5AE70F5a03", "name": "Upgrade", "compiler": "0.8.11", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "3/15/2022"}
+{"address": "0x70e2B0716f66E7eaeDD21Ac03876b8391cd51d12", "name": "TreasuryDAO", "compiler": "0.8.9", "balance": "0 AVAX", "txcount": 2, "settings": "", "date": "3/15/2022"}
+{"address": "0x1D6efaf500333F94b7863636859aD6EeE4729C0f", "name": "LiquidityLocker", "compiler": "0.8.9", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "3/15/2022"}
