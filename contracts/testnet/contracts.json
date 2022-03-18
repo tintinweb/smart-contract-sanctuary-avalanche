@@ -13007,3 +13007,28 @@
 {"address": "0xe25e8533FBe3E725B3baE172d3aBAB0887ccD63E", "name": "Rewards", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "3/17/2022"}
 {"address": "0xC86c5774c547797817D4c252E3D62a223b3c9cEE", "name": "Asset", "compiler": "0.8.9", "balance": "0 AVAX", "txcount": 0, "settings": "", "date": "3/17/2022"}
 {"address": "0x652f81962aD3C1cc452d43C9aE4dBd1F4D050A8b", "name": "NonFungiblePositionManager", "compiler": "0.8.8", "balance": "-", "txcount": 0, "settings": "", "date": "3/17/2022", "err": "Exception('HTML IN OUTPUT!! - BeautifulSoup messed up..')"}
+{"address": "0xe2bB5938c8E965181Be2A37A94B59791931406A7", "name": "CunoroStaking", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "3/18/2022"}
+{"address": "0x2f6D829aa45850CD2F7992a8b1b6212BA5c5C16a", "name": "CunoroTreasury", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "3/18/2022"}
+{"address": "0x7a564b1fE142D6fAc64920B71f379157BED34538", "name": "sCunoroERC20Token", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "3/18/2022"}
+{"address": "0xD8dbf0D672FdF2c92e390a71F223E3850e0Cf681", "name": "FrogFrens", "compiler": "0.8.3", "balance": "-", "txcount": 0, "settings": "", "date": "3/18/2022"}
+{"address": "0x1FccEAF22D39B2B7DB72C66F58ACE1C0eFB31363", "name": "FrogFrensRoyalties", "compiler": "0.8.3", "balance": "-", "txcount": 0, "settings": "", "date": "3/18/2022"}
+{"address": "0xB12A239eC069eE358D6B99e485Bc072986868F06", "name": "GameTournament", "compiler": "0.8.5", "balance": "-", "txcount": 0, "settings": "", "date": "3/18/2022"}
+{"address": "0x3191eC3f672438B3A06990c7d04fB10DFEeFf504", "name": "GameTournament", "compiler": "0.8.5", "balance": "-", "txcount": 0, "settings": "", "date": "3/18/2022"}
+{"address": "0x58f70cd20c2e97ad175768b1a4852a7032BF27ac", "name": "CyberPoptokens", "compiler": "0.8.13", "balance": "-", "txcount": 0, "settings": "-", "date": "3/18/2022"}
+{"address": "0x6F293f667C9D4776AB9A11DC62b7f1Add74ecad6", "name": "AvalaunchCollateral", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "-", "date": "3/18/2022"}
+{"address": "0xA8639CEcC40d7066D7A52B1B8c0FB4E4533B18AB", "name": "Storage", "compiler": "0.8.13", "balance": "-", "txcount": 0, "settings": "-", "date": "3/18/2022"}
+{"address": "0x65863FbaC09BB6BD0F47A9064990F19A1040AC55", "name": "VinTageTape", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "3/18/2022"}
+{"address": "0x1389b88d0dab4ec731c633f4010e04474f3b2816", "name": "EmeraldNodeV2", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "3/18/2022"}
+{"address": "0x24e083e61f97b8E1251601AA7F6e30631840372e", "name": "GameTournament", "compiler": "0.8.5", "balance": "-", "txcount": 0, "settings": "", "date": "3/18/2022"}
+{"address": "0x4B3e2B1366bc169c184a44b80a2A9EaE4EC77F63", "name": "Migrations", "compiler": "0.8.13", "balance": "-", "txcount": 0, "settings": "-", "date": "3/18/2022"}
+{"address": "0xeF517730b54ABa67e41917b50fd0775F99828870", "name": "EvlilikSozlesmesi", "compiler": "0.5.0", "balance": "-", "txcount": 0, "settings": "-", "date": "3/18/2022"}
+{"address": "0x9c996d89cf2da50bd9a2f8a2aa2a3eb6d2290af0", "name": "TAROTCASH", "compiler": "0.8.4", "balance": "0 AVAX", "txcount": 0, "settings": "", "date": "3/18/2022"}
+{"address": "0x66912f5985Bf6D7d9189A4f94e8A9024790FB073", "name": "AaveLinearPoolFactory", "compiler": "0.7.1", "balance": "0 AVAX", "txcount": 0, "settings": "", "date": "3/18/2022"}
+{"address": "0x16B8828AE276845EC165a9DfeceCbC2Bb11D9fb6", "name": "Circle_NFT", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "-", "date": "3/18/2022"}
+{"address": "0x57F69853E5018A0d249937A8421E4c031309B1A7", "name": "StablePhantomPoolFactory", "compiler": "0.7.1", "balance": "0 AVAX", "txcount": 0, "settings": "", "date": "3/18/2022"}
+{"address": "0x49dCEe899c03E5BAA5f472203B9A8cE9eE421288", "name": "ChestAdapterNFT", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "3/18/2022"}
+{"address": "0x9d90711da331d59e5808f5c07fbe0ab30cb2733e", "name": "EmeraldNodeV2", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "3/18/2022"}
+{"address": "0x414e4701b9bf1408e41a98df27dc10a5fef6b879", "name": "VaultFactory", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "3/18/2022"}
+{"address": "0xa89b38e0DB06B8F76b7497c78689Cfd16848d8D5", "name": "NonFungibleFarm", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "3/18/2022"}
+{"address": "0xAdCc22a377D3dA673bB7f9aeDF2bA300478964BD", "name": "Helper", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "3/18/2022"}
+{"address": "0x652f81962aD3C1cc452d43C9aE4dBd1F4D050A8b", "name": "NonFungiblePositionManager", "compiler": "0.8.8", "balance": "-", "txcount": 0, "settings": "", "date": "3/17/2022", "err": "Exception('HTML IN OUTPUT!! - BeautifulSoup messed up..')"}
