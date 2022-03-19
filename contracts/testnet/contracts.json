@@ -13137,3 +13137,9 @@
 {"address": "0x7C8490Be989267816ce7E8E2de9271724A1de064", "name": "SaleAvat", "compiler": "0.8.12", "balance": "-", "txcount": 0, "settings": "", "date": "3/18/2022"}
 {"address": "0xbd45Aa2a0Ae0Fe2468554E2824c0B7036BA440C6", "name": "AvatToken", "compiler": "0.8.12", "balance": "-", "txcount": 0, "settings": "", "date": "3/18/2022"}
 {"address": "0xf17A1A40EC8180e0bF67aF873404D109DA4Af55D", "name": "Distributor", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "3/18/2022"}
+{"address": "0x13aBcb80F4BA2AA3E3AE2AdaccA31c2143467053", "name": "StakingPoolWithLock", "compiler": "0.8.12", "balance": "-", "txcount": 0, "settings": "", "date": "3/19/2022"}
+{"address": "0x109486afDe1885793Ebc7346e2257e25225C7AF8", "name": "Voting", "compiler": "0.8.1", "balance": "-", "txcount": 0, "settings": "", "date": "3/19/2022"}
+{"address": "0x942A471261a0A4CBdCECe3A2EcE6d30536cD2Ffb", "name": "Countryside", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "3/19/2022"}
+{"address": "0x28d8767ce39faCb214073Ce5740735Cbc98bb3C4", "name": "StakingPoolWithLock", "compiler": "0.8.12", "balance": "-", "txcount": 0, "settings": "", "date": "3/19/2022"}
+{"address": "0xe7eD8AB49aeA19177c510b2F313C330b8d0a78b1", "name": "AvalancheNFT", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "3/19/2022"}
+{"address": "0x652f81962aD3C1cc452d43C9aE4dBd1F4D050A8b", "name": "NonFungiblePositionManager", "compiler": "0.8.8", "balance": "-", "txcount": 0, "settings": "", "date": "3/17/2022", "err": "Exception('HTML IN OUTPUT!! - BeautifulSoup messed up..')"}
