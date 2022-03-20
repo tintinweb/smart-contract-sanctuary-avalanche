@@ -13143,3 +13143,54 @@
 {"address": "0x28d8767ce39faCb214073Ce5740735Cbc98bb3C4", "name": "StakingPoolWithLock", "compiler": "0.8.12", "balance": "-", "txcount": 0, "settings": "", "date": "3/19/2022"}
 {"address": "0xe7eD8AB49aeA19177c510b2F313C330b8d0a78b1", "name": "AvalancheNFT", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "3/19/2022"}
 {"address": "0x652f81962aD3C1cc452d43C9aE4dBd1F4D050A8b", "name": "NonFungiblePositionManager", "compiler": "0.8.8", "balance": "-", "txcount": 0, "settings": "", "date": "3/17/2022", "err": "Exception('HTML IN OUTPUT!! - BeautifulSoup messed up..')"}
+{"address": "0x093908907910A4B4B6C943962B90A6c18e199c97", "name": "CFDiamond", "compiler": "0.8.4", "balance": "0 AVAX", "txcount": 0, "settings": "", "date": "3/20/2022"}
+{"address": "0xE1666502e12d407E741b44C1c8C261072c5F016f", "name": "Balloons", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "-", "date": "3/20/2022"}
+{"address": "0xD95FC587B39fB0339107C091d930eB1eaB9952d0", "name": "GymJunkie", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "3/20/2022"}
+{"address": "0x90422734819D777FDF94a7E84EEe8Cf6Cc102950", "name": "Gains", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "3/20/2022"}
+{"address": "0x26972fdc86906e2b2fbb8267f0cbc79b8f62d1a3", "name": "TestlingAlphaElite", "compiler": "0.8.13", "balance": "-", "txcount": 0, "settings": "", "date": "3/20/2022"}
+{"address": "0x8414DE46b504b92FF5F09895e1Ce05787cf771Ea", "name": "SalesContract", "compiler": "0.6.0", "balance": "0 AVAX", "txcount": 0, "settings": "", "date": "3/20/2022"}
+{"address": "0xFAc1081be4C2fC6610998BA9eBe2f85e63768E95", "name": "Simple1155", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "3/20/2022"}
+{"address": "0xb26252dd5b26988a8dfab035ccd70ce4938716f7", "name": "SalesContract", "compiler": "0.6.0", "balance": "0 AVAX", "txcount": 0, "settings": "", "date": "3/20/2022"}
+{"address": "0xe368e85fc8f46402ef85f760d72b7a4a5609a1f5", "name": "SteakToken", "compiler": "0.6.0", "balance": "-", "txcount": 0, "settings": "", "date": "3/20/2022"}
+{"address": "0x853a8bbfbf864eb28cb59f92e8135343107a392c", "name": "PearToken", "compiler": "0.6.0", "balance": "-", "txcount": 0, "settings": "", "date": "3/20/2022"}
+{"address": "0x8aFECB0Fb9b62D94796F3c9A5f6c545624010766", "name": "IglooV2_USDT", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "3/20/2022"}
+{"address": "0x6f1A2EDF047A9b20AfF5FAE3b17D6c870D75C2B5", "name": "Traderjoe_Test", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "3/20/2022"}
+{"address": "0xd9b1729330c307f2ee783f7aee773ad9a5b9802f", "name": "Bn128SchnorrVerifier", "compiler": "0.4.26", "balance": "-", "txcount": 0, "settings": "-", "date": "3/20/2022"}
+{"address": "0x7Be0a829E0FEb8f25d85B5e792510C98A5733F79", "name": "AvaDice", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "3/19/2022"}
+{"address": "0x62813d501A4f8AAD1da6177b27AD8eBb36EE3B87", "name": "AvaDatabse", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "3/19/2022"}
+{"address": "0x77D426D82eDAdd51d47cF25fde47CdfD401dAB21", "name": "AvaDice", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "3/19/2022"}
+{"address": "0x56bf842aa027de6641c7671dad82bef8e056b6d8", "name": "PEDLATokenAndCrowdsale", "compiler": "0.4.24", "balance": "-", "txcount": 0, "settings": "", "date": "3/19/2022"}
+{"address": "0x7De7E0Fc5A8a3D6789aD248d511845f9f37934E3", "name": "BloodRedRequiem", "compiler": "0.8.13", "balance": "-", "txcount": 0, "settings": "", "date": "3/19/2022"}
+{"address": "0x83FB618e5288dF061d687c78D821674D1100e18B", "name": "Tradescrow", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "3/19/2022"}
+{"address": "0xa419359B0bA70F4670dB695A11Ba44395fc0f3b8", "name": "Countryside", "compiler": "0.8.13", "balance": "-", "txcount": 0, "settings": "", "date": "3/19/2022"}
+{"address": "0x714e518c39eec756a912c8f97e4878ff147b8ed9", "name": "Vault", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "3/19/2022"}
+{"address": "0x9b2a063e5a970be58c8469c7ad5fd0a10173cf2c", "name": "PotionSwapV2Router02", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "3/19/2022"}
+{"address": "0x5e50c8e1264ea1f542c8c701856ce466297b58de", "name": "PotionSwapV2Factory", "compiler": "0.5.16", "balance": "-", "txcount": 0, "settings": "", "date": "3/19/2022"}
+{"address": "0x0c84c8a2c27adbef4d06d6bf8d5a26ccbf9df0fe", "name": "OracleProxy", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "3/19/2022"}
+{"address": "0x6a2B0202Da19115978f8e41931df712B48DD5D80", "name": "PriceOracleV3", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "3/19/2022"}
+{"address": "0x39f2d85fbaFb477C89b9754192cC0827dC9DdbC7", "name": "PriceOracleV2", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "3/19/2022"}
+{"address": "0x8EBcDC8330D5c16753002901e892Da8e9bC06094", "name": "PriceOracle", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "3/19/2022"}
+{"address": "0xb5DefBe0857dD5C33A3C14A84f69FcC6F6c5871d", "name": "DAO", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "3/19/2022"}
+{"address": "0x09070B565f32481Bd1D0ca9Ad210BFD8C17d8620", "name": "ClockSale", "compiler": "0.8.9", "balance": "0 AVAX", "txcount": 0, "settings": "", "date": "3/19/2022"}
+{"address": "0x57030A9D7fF263dfC621f8e91d7e6cc9BeA3dC86", "name": "rarity_crafting", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "3/19/2022"}
+{"address": "0xF4fe08B2Dd7bAAd61a17aAaA2FfdC2A7Ae08408E", "name": "AvaxBunnies", "compiler": "0.8.4", "balance": "0 AVAX", "txcount": 0, "settings": "", "date": "3/19/2022"}
+{"address": "0x9e2ff79aa6b18759bf148c468fb69c59c51c94a5", "name": "AvalantLPFarm", "compiler": "0.8.2", "balance": "-", "txcount": 0, "settings": "", "date": "3/19/2022"}
+{"address": "0x14aaD015cd8Ac8cF29878DfaB1d656A51284AE76", "name": "StrattonNodes", "compiler": "0.8.8", "balance": "-", "txcount": 0, "settings": "", "date": "3/19/2022"}
+{"address": "0x4bEE810074B6A21cB82fc4bF9a37553Ec6b63fa8", "name": "wsNORO", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "3/19/2022"}
+{"address": "0xDC34f2C42bF88d4C2af8b9Cc69217Bb86a7E1467", "name": "CunoroBondingCalculator", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "3/19/2022"}
+{"address": "0xf61E6Ba30807Da7ad5B8F24CEFB089fa1b2A0AE6", "name": "AvaxBondDepository", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "3/19/2022"}
+{"address": "0x8ace22db3b7ccecaeb0a507c1df1065a5e651bc9", "name": "AvaxSavingNew", "compiler": "0.8.6", "balance": "0.92 AVAX", "txcount": 0, "settings": "", "date": "3/19/2022"}
+{"address": "0x8dBdd117C6b89097e9612576f131Ac13711F85b8", "name": "CunoroBondDepository", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "3/19/2022"}
+{"address": "0x13Bb64874B710cEced2C351Bb553fB5257399257", "name": "StakingWarmup", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "3/19/2022"}
+{"address": "0x7d75EA0Cee76a4CBcDEa503995553fDB536b996c", "name": "StakingHelper", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "3/19/2022"}
+{"address": "0x2CF1BFFD76bE33FedEA46904D50cB04bf941F22D", "name": "HelloWorld", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "3/19/2022"}
+{"address": "0xFC394cB5F84f55a10f41DAA5144186D06f744ABb", "name": "Distributor", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "3/19/2022"}
+{"address": "0x7dFc7Ea6bA0e618F763C872b4a83cCbE175de254", "name": "CunoroStaking", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "3/19/2022"}
+{"address": "0xf4B02280Ea5339F5A46f026C09864C0F65a50Ee9", "name": "CunoroTreasury", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "3/19/2022"}
+{"address": "0xA17e93f0a360aBFe39CdbA671cEF4AFDF18A81cF", "name": "sCunoroERC20Token", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "3/19/2022"}
+{"address": "0x2A1D8D54e7A5A4da0C8ACC37bf74B401b639A608", "name": "GuestStake", "compiler": "0.8.13", "balance": "-", "txcount": 0, "settings": "", "date": "3/19/2022"}
+{"address": "0x8D1211B08731a10Ea036bd31ed483097009c73b9", "name": "AvaxBunnies", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "3/19/2022"}
+{"address": "0x5609723bb4649f01f67e782d4575354FC6234033", "name": "GuestStake", "compiler": "0.8.13", "balance": "-", "txcount": 0, "settings": "", "date": "3/19/2022"}
+{"address": "0x726fc006eb2d115775fadbcf382d621f0f5e6518", "name": "BurnableMintableCappedERC20", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "3/19/2022"}
+{"address": "0xfb0C672528A2061983bDb3cfF22ec575907ffB96", "name": "GuestStake", "compiler": "0.8.13", "balance": "-", "txcount": 0, "settings": "", "date": "3/19/2022"}
+{"address": "0x652f81962aD3C1cc452d43C9aE4dBd1F4D050A8b", "name": "NonFungiblePositionManager", "compiler": "0.8.8", "balance": "-", "txcount": 0, "settings": "", "date": "3/17/2022", "err": "Exception('HTML IN OUTPUT!! - BeautifulSoup messed up..')"}
