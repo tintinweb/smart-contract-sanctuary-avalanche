@@ -17119,3 +17119,110 @@
 {"address": "0x64116e1525b734e252b56c4e91992be7d037d826", "name": "EarnERC20V1", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "4/18/2022"}
 {"address": "0x98Eb0Fc819292f664233C61974BDC46018F10091", "name": "SpiritLordERC721", "compiler": "0.8.13", "balance": "-", "txcount": 0, "settings": "", "date": "4/18/2022"}
 {"address": "0x25fcfff44ab4c4d41d6e2d290f17556be52614cb", "name": "TalentScoutPresale", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "4/18/2022"}
+{"address": "0x235171649750F0ecf672D7B2A0248e501D2FDD5F", "name": "GAMENFT", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "4/20/2022"}
+{"address": "0x5aC54C2E6f1E62144DfFcD73d5b84ba1178167DF", "name": "FyRiseMarketplace", "compiler": "0.8.3", "balance": "-", "txcount": 0, "settings": "", "date": "4/20/2022"}
+{"address": "0x9B4693Ac361fa7A51542c218105c90Cc2796364B", "name": "FyRiseNFT", "compiler": "0.8.3", "balance": "-", "txcount": 0, "settings": "", "date": "4/20/2022"}
+{"address": "0x2a35011439df0a48883b2bde3716d77da15f41d5", "name": "IDO", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "4/20/2022"}
+{"address": "0xdcb4D502C4ccDCBE02e1A5B3B04013a4B92C3783", "name": "StandardToken", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 0, "settings": "", "date": "4/20/2022"}
+{"address": "0x3C28A3b07Fa933D020c4bCa3ed27e0D001d06E1d", "name": "SpiritLordERC721", "compiler": "0.8.13", "balance": "-", "txcount": 0, "settings": "", "date": "4/20/2022"}
+{"address": "0x4992Ff3E12c8A29C87caDD152935Cc2faE622687", "name": "SpiritLordHeroInfo", "compiler": "0.8.13", "balance": "-", "txcount": 0, "settings": "", "date": "4/20/2022"}
+{"address": "0x69403065849d00c4a8db9a26d4e12f97546cd90d", "name": "TalentScoutPresale", "compiler": "0.8.0", "balance": "0 AVAX", "txcount": 0, "settings": "", "date": "4/20/2022"}
+{"address": "0xd6d296152ab81958e8accdf577315245894ffd44", "name": "helo", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "-", "date": "4/20/2022"}
+{"address": "0x7aE23BE6cFb6F508A49dbA9a435FC254A43f9082", "name": "BifrostV2", "compiler": "0.8.12", "balance": "-", "txcount": 0, "settings": "", "date": "4/20/2022"}
+{"address": "0xE51F67C2DeCc5095B4642CBf7960E38ADbd5E168", "name": "CRATE", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "4/20/2022"}
+{"address": "0xf7d095029e5236624019434ea8a43887637AA7AB", "name": "GAMENFT", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "4/20/2022"}
+{"address": "0xBC20F252C76101307521432d76F3B5dF66EaDd88", "name": "NODERewardManagement", "compiler": "0.8.12", "balance": "-", "txcount": 0, "settings": "", "date": "4/20/2022"}
+{"address": "0xC9633d3594992180E2c517Ff4d39E1A38474FB9E", "name": "BifrostV2", "compiler": "0.8.12", "balance": "-", "txcount": 0, "settings": "", "date": "4/20/2022"}
+{"address": "0xE0761b4665549e8a32c795DDEAF45d1D9ddE1935", "name": "SnowTradeRouter", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "4/20/2022"}
+{"address": "0x014562502f961ED71b5123679a87300B708a5Ad9", "name": "WAVAX", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "4/20/2022"}
+{"address": "0x985Be8bB9Bc3421CdfD6fA40e6c8Ebfd84286681", "name": "CowSwapRouter", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "4/20/2022"}
+{"address": "0xe453bc7e9d22ac785bbd7eff8599c9052c774d9f", "name": "Assetha", "compiler": "0.8.13", "balance": "0 AVAX", "txcount": 0, "settings": "", "date": "4/20/2022"}
+{"address": "0xDfE3b540889994EC517E83dA120F171aB44CaAFe", "name": "CryptoWaifus", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "4/20/2022"}
+{"address": "0xcb36d85e2d80943c1fe8abee2667e4877ed0fbd6", "name": "Assetha", "compiler": "0.8.13", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0xB0aF795f92f94996F9D77A5C9b8E1543c0aB5328", "name": "SunflowerLand", "compiler": "0.8.4", "balance": "0 AVAX", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x1ac6a04da923b5b88f57e96059b467acadbcdf81", "name": "Assetha", "compiler": "0.8.13", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x267F83942214d11fDce5E8AA98351AFF6392946A", "name": "Disperse", "compiler": "0.4.25", "balance": "-", "txcount": 0, "settings": "-", "date": "4/19/2022"}
+{"address": "0xa0c5e34dca767496ed34fee03dbcddc08f7a81d2", "name": "RandomV2", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x5b48f02e0768daed95b8182f71037a12a4b59a0c", "name": "RandomV2", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x7e119793A0D164629eB74B303207Ff323A1e5699", "name": "TreasuryRoyaltyDistributor", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x741911510580D612cC7DD886aC6883C026C32d0e", "name": "OwnerRoyaltyDistributor", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x88c8389B7F166237648085AdE912e7E89bF952b8", "name": "ArtistRoyaltyDistributor", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x795999f9A77f2C558373A40070a592C354c165C9", "name": "StrattonNodes", "compiler": "0.8.8", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0xc4b3f2bad39b043010353424537a86274c774597", "name": "RandomV2", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x67647de3d757db0bb5d26a6c7fba19a048ef08f3", "name": "SnowconeMoney", "compiler": "0.8.13", "balance": "5.929965330249028098 AVAX", "txcount": 0, "settings": "-", "date": "4/19/2022"}
+{"address": "0x0f1220d000a673c7248a3995d5913ad71e42e7f5", "name": "RandomV2", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0xa779e7073cfd83b7411b880d0bb9a128a43b7273", "name": "Characters", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0xb3c31d9d4cf1e0769921b7bbbdbf4da263c43e84", "name": "RandomV2", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x9882f63615C78243c42c9cBA0F408B9dF3B5926a", "name": "AlphaNodesNFTMarketPlace", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x873F150A0Ab707A861650a4677d952755A84d7d0", "name": "TransactionFeeDistributor", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0xbaac135c102905230e4aF3A9c01CB516B0ed7939", "name": "ShareStaking", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0xAE9b174476CC8335fd1181DfBbB0170f70778F49", "name": "AlphaShareCreator", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x4C9D5651106b5cFB12ADBcF1629a3027Ea5375A5", "name": "AlphaVanityAttributeManager", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x4750E77a25ed7F75A6D38d08d5Ce8789E80461Da", "name": "AlphaNFTPowerLevelManager", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x097d71c4454c3Ec4E5c2D4c3fb4f39e23A267a03", "name": "ALPHANFT", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0xcAc17515d9074f202eb51F191bB7431F85786a72", "name": "AlphaSingleStake", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x7f9a817866e0bce295114c5274f25483ac78e422", "name": "MoneyTreeMiner", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "-", "date": "4/19/2022"}
+{"address": "0x6624F9b5dE9180ae8B351f09Fada1d2beA29Cea1", "name": "SongMarketplace", "compiler": "0.8.4", "balance": "0 AVAX", "txcount": 0, "settings": "-", "date": "4/19/2022"}
+{"address": "0x30FD0FAE0984Dca20A4707A2d0b507Ed76Da2F85", "name": "SongTrack", "compiler": "0.8.4", "balance": "0 AVAX", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x4e4952dee94fe697daadf40e7df54c31c8712c21", "name": "GraveTest", "compiler": "0.8.9", "balance": "2.105545 AVAX", "txcount": 0, "settings": "-", "date": "4/19/2022"}
+{"address": "0xF6df6bdfcf35B5bbef17EDaf14FFc4b1a65032d4", "name": "PvpCore", "compiler": "0.6.5", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0xdf513f823353f46bb39533dad36a86ae147348a7", "name": "OMBO", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0xf0d1E74084Fbc88dFf87C5315eA4844A5EA4013D", "name": "Presale", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0xD4E90e25D70db44bbf03ef3176cab380DC65299B", "name": "Asgardian", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x3AF1d6dD01c957E723e265f7B53A123Db824bc1f", "name": "NGWhitelistFacet", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x64c26A6736588dBBdDA859b52Fc78421A1761b18", "name": "NGUpgradeTimeFacet", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0xbfa4a1C6E368b882b371a9Fe68c415DB1D11C99f", "name": "NGTechRequirementsFacet", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0xb56B0998b8e8D760C179A00637A87C27abB593Df", "name": "NGResourceUpgradesFacet", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x7A2FFC6E99413ee37F8Fb4E39e5D239Ac56D4df0", "name": "NGResourceUIFacet", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x1564Ee12177e3DBB921644C0FAbe27dB8866Cd73", "name": "NGResourcesFacet", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0xB0B4eB2D7b1b2060bfFb9D3A61D4533B8956535B", "name": "NGResourceRequirementsFacet", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x7a76F799971909aA2e3bbC4455d2D0494f95035c", "name": "NGResourceCollectFacet", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0xB3251B2A6284906b2A7D375a7688fE6af89cB79F", "name": "NGResourceCheckAndSpendFacet", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0xc5429855dC7a1bbb03738C669eA68233a97236a4", "name": "NGRandom", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x3E2094cAcea564401BE641Ec649BD972D33A9384", "name": "NGLibrary", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x593331cf46f7F8d2e83C4356716191B81410F7cf", "name": "NGHeroFacet", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0xa304c57D9886369FDa961EcD00201ab741e5cA29", "name": "NGGameStatsFacet", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0xcA68C2cC0FdDc86CC65F0584199E3CD7175dD2ba", "name": "NGCasinoRequirementsFacet", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0xd21A819faBF979c5103aF8550Ca1418114DCF918", "name": "NGCasino", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x9203F54D796cAB6413195BFd5f553770bcd787da", "name": "NGBarracksRequirementsFacet", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x9842C84bFD70fa3234Df8d9077Ed4Ab9BeDC87B2", "name": "NGBarracksFacet", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0xFBcE774E5B56f653AFC99a7fcD59485Bed30a014", "name": "NGBankVaultFacet", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0xb716c2c6BFCeaBBD60DbAE97692BE557D597a131", "name": "NGAdminFacet", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0xC06FbbEaCBa31F1E5B186eFf742D56AF6065FCdF", "name": "NGAccountingFirmRequirementsFacet", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0xd1aEB352C9389DC3a49aC3af520c9476592CE5a9", "name": "NGAccountingFirmFacet", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x718533ed875E62eA1f41307b6f8d4C2fc85747b8", "name": "NGInitialize", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x0d3f245504b4fa546bdfc99f27e6822890487a8e", "name": "AAVECUB", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "-", "date": "4/19/2022"}
+{"address": "0x516B6ceC87Ae8d489340B075Cbe68dAb012E6D2e", "name": "SEED", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0xc74f2c8f9ccdbd247ba474511b29121d1c19c91e", "name": "HamsterzBeachClub", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x9014Cb96985700f64A9F2397da0965c7542782C4", "name": "Land", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x9ccAADe1304424674B87B9C616DAF706a97583C6", "name": "Land", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x7f5AF7a37a33898544717AAa6c35c111dCe95b28", "name": "AirnodeRrpV0", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x4923968942E8aae4656ae4913874EB7312e0F7c7", "name": "RequesterAuthorizerWithAirnode", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x5997C09be60196b7De9dE73C88dd7776f2875401", "name": "AccessControlRegistry", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0xde06dD458fa68b9Ad64D3Ae577F271d943B13CDA", "name": "Land", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x7d410f02162be85ef22f663500893875b0e1818a", "name": "SalvorNFTLast", "compiler": "0.8.12", "balance": "-", "txcount": 0, "settings": "-", "date": "4/19/2022"}
+{"address": "0x06003942C602fD9Ca40c9E2651F9B2bfC9c1958e", "name": "Land", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x1adef756e0ee4776b671b4258ca659d16b10efce", "name": "AuctionManagerCustomToken", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x67afcedfe2a9f2bd37469224732972b8a173dd38", "name": "AuctionManagerCustomToken", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x57a9Be3BA8d90A0Cb11618c9da2BbcB63e39475F", "name": "BaseSwap", "compiler": "0.8.1", "balance": "-", "txcount": 0, "settings": "-", "date": "4/19/2022"}
+{"address": "0xe313A6323d7AE16FCEd680e8a4A976C7c6861093", "name": "Lending", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x9fEf694f9757665Ac2AED056a17CBbDA54119D21", "name": "Land", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x605d48d9d62f603dd8352ca95dfb7113d2577e0a", "name": "LandUpgrade", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x7b2ff3c23b0421251ee5214517ec087464cdcccc", "name": "DYNASTY", "compiler": "0.8.8", "balance": "-", "txcount": 0, "settings": "-", "date": "4/19/2022"}
+{"address": "0x957b0499E271e6F10FCe96F754b9d2Ec8866D3b8", "name": "AvaxHuntersV4", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0xed3b90c4bf882d7ab723079a082781302ae0dce9", "name": "TalentScoutPresale", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x16b3de59abd066a3b3690028c62db6eb937040eb", "name": "Land", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0xb2852f526a65fcd37d8e4052f65b54a38386aefb", "name": "TalentScoutPresale", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0xDf62ba9D88A7E260bbCE37Cdc4b2F52625bf4760", "name": "LandUpgrade", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0xe59a9602812fa554F46490Ae63F71E344ED5230A", "name": "MonesEquipmentNFT", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x952be3355d1Ac42864664F4Bc570ac369a8D089A", "name": "BotBOG", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x8f89ddb3d9f80d4e761f33bae9bc574f088398bb", "name": "TalentScoutPresale", "compiler": "0.8.0", "balance": "0 AVAX", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0xb92498e6b92e31089ef6e4483a65b5c70576104a", "name": "PNSPM", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "4/19/2022"}
+{"address": "0x09a767120a11b7e65af9c6ba51971433c72b96bb", "name": "AuctionManagerCustomToken", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0xaf95291556ea5f68abf3ff00c3e677a7533a00d9", "name": "TalentScoutPresale", "compiler": "0.8.0", "balance": "0 AVAX", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0xE3080332a5c83e11D30Da502F0afE36fc8083C5b", "name": "FyRiseMarketplace", "compiler": "0.8.3", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0xc6386000c3a9e5B7883aBF2530176110ABEb3a34", "name": "FyRiseNFT", "compiler": "0.8.3", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x6087380088a8008996973d48454211cead12ea84", "name": "forwarder", "compiler": "0.8.13", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x7ccf7b3021eb96627d19e2cc16b38f708b31d3fe", "name": "AuctionManagerCustomToken", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "4/19/2022"}
+{"address": "0x675E8D9b5e477B1073A9b80112b9865C2d5BE88A", "name": "DummyTokenFlatten", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "-", "date": "4/19/2022"}
+{"address": "0xb82bc5f874ca553c33e14dd0c92c8f9b2d19ed96", "name": "SongTrack", "compiler": "0.8.4", "balance": "0 AVAX", "txcount": 0, "settings": "", "date": "4/19/2022"}
