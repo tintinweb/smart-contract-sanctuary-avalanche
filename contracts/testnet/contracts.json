@@ -18805,3 +18805,11 @@
 {"address": "0x5ea11ff3a2c0eedbceb5ccda44918f7f1506b9df", "name": "EarnNodeV2", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "5/4/2022"}
 {"address": "0x683ba4139f81c900fbd79b0cfc41dd601e61b566", "name": "InsuranceSender", "compiler": "0.8.1", "balance": "0 AVAX", "txcount": 0, "settings": "-", "date": "5/4/2022"}
 {"address": "0x282e5703B4F5B1112CE672DAc11FF2EF0aBd235d", "name": "GsdPriceAggregator", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "-", "date": "5/4/2022"}
+{"address": "0x2D596e821fE587CE3308848A05D6895bdC021fDb", "name": "Swapper", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "5/5/2022"}
+{"address": "0x1430480D8F755c1513417A300489C353B982d448", "name": "AnySend", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "5/5/2022"}
+{"address": "0xF79D63b29F6e3c9613C22dFF9ceEA323f1dC9A7e", "name": "MainProject", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 0, "settings": "", "date": "5/5/2022"}
+{"address": "0xa0ce5Ec56d403d35c531ACe3EEf2d9c5B3CDB426", "name": "SUBPROJECT2", "compiler": "0.8.7", "balance": "0.5 AVAX", "txcount": 0, "settings": "", "date": "5/5/2022"}
+{"address": "0x55777DB5fE08DB57cE98E78fDf54CD09e9B20e7D", "name": "SUBPROJECT1", "compiler": "0.8.7", "balance": "0.5 AVAX", "txcount": 0, "settings": "", "date": "5/5/2022"}
+{"address": "0xe5d8a27d9c29a5146c6a54b9d7bdd0b9088dce3a", "name": "PaymentSplitter", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 0, "settings": "", "date": "5/5/2022"}
+{"address": "0xEdd559CbdCcD1Ae975065BACE818C426f812eaF6", "name": "ZeusNodeManagerBridge", "compiler": "0.8.13", "balance": "-", "txcount": 0, "settings": "", "date": "5/5/2022"}
+{"address": "0xdE553D0957be0b332cEE0AD4bAd798bCFfc851b5", "name": "ZEUSV4", "compiler": "0.8.13", "balance": "-", "txcount": 0, "settings": "", "date": "5/5/2022"}
