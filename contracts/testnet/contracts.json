@@ -18924,3 +18924,56 @@
 {"address": "0x4fe8e4782c44657bc1dfbd00b719032626599b45", "name": "OwnedUpgradeabilityProxy", "compiler": "0.5.2", "balance": "-", "txcount": 0, "settings": "", "date": "5/6/2022"}
 {"address": "0x1f0a20f0bf5259b0522f38065a2f992ea05a60b5", "name": "MintableERC721New", "compiler": "0.5.2", "balance": "-", "txcount": 0, "settings": "", "date": "5/6/2022"}
 {"address": "0x958f3889e462c98dc52b5a83bc3f28489c11902d", "name": "FlashSales1155", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "5/6/2022"}
+{"address": "0x3E3e471a7ef3950F9f3E506D964c645600C7b8EB", "name": "OmnichainFungibleToken", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "5/8/2022"}
+{"address": "0x3dfD469655ae0E1F72686d59c250FEF274f5d40d", "name": "NodeManagerV76", "compiler": "0.8.13", "balance": "-", "txcount": 0, "settings": "", "date": "5/8/2022"}
+{"address": "0x7cb1685c5480b510924da6353185efa1cbd01f75", "name": "CloversNFT", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "5/8/2022"}
+{"address": "0xb5ddEAeeCBc2314421897499e3A5E1a094A1E0DF", "name": "NodeManagerV75", "compiler": "0.8.13", "balance": "-", "txcount": 0, "settings": "", "date": "5/8/2022"}
+{"address": "0x24192aec87a6a4e360ecd6a494a7f4407c1ce323", "name": "CloversNFT", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "5/8/2022"}
+{"address": "0x088594828b86d625F195F5457aB41CC8727c82bE", "name": "NodeManagerV74", "compiler": "0.8.13", "balance": "-", "txcount": 0, "settings": "", "date": "5/8/2022"}
+{"address": "0xAeb023080fC7e2836b3dCbe199322787957De5Ff", "name": "multineko", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "5/8/2022"}
+{"address": "0xDE18aa9d35fFA5461383eB2F9eB87b25d3fCAd5A", "name": "QueenCrownContractIsERC721A", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "5/8/2022"}
+{"address": "0xbAA3A9AC8162AC3AaF1418e326160e345AdA4165", "name": "OmniChainNFT", "compiler": "0.8.9", "balance": "0 AVAX", "txcount": 0, "settings": "", "date": "5/8/2022"}
+{"address": "0xcfc9c5aecf5072ef9200e01824623b06a7714d9b", "name": "CloversNFT", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "5/8/2022"}
+{"address": "0xe3dc5a3f910ab6d41b985e07055279547656fd58", "name": "CloversNFT", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "5/8/2022"}
+{"address": "0xf03951CEaB76618339AB002c1b25cf48fA170D12", "name": "OmniChainNFT", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "5/8/2022"}
+{"address": "0x4fd9f03a4ce1868d1ff859e802ae07f7ef313088", "name": "Rothschild_Winery_Test4", "compiler": "0.8.9", "balance": "1.044995467519507449 AVAX", "txcount": 0, "settings": "", "date": "5/7/2022"}
+{"address": "0x97FbBE518503B8B5e4aaF4B71a5D1b76E8c31CC3", "name": "NodeManagerV73", "compiler": "0.8.13", "balance": "-", "txcount": 0, "settings": "", "date": "5/7/2022"}
+{"address": "0xC251D2b7F8eF66da4DA928411b0672A93120b491", "name": "NodeManagerV73", "compiler": "0.8.13", "balance": "-", "txcount": 0, "settings": "", "date": "5/7/2022"}
+{"address": "0xb2c606e0d4c78b200fb371c63717e2dff04cafb5", "name": "Rothschild_Vinery_Test3", "compiler": "0.8.9", "balance": "0.095 AVAX", "txcount": 0, "settings": "", "date": "5/7/2022"}
+{"address": "0x5f81c25c31720bce7328fc7164e9485da2d62d56", "name": "Rothschild_Vinery_Test2", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "5/7/2022"}
+{"address": "0x400b97aB2903c4301A532c24BB46aD2FF301F6aC", "name": "AVAXToken", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "5/7/2022"}
+{"address": "0xF115B425253d593C025F994C1cE33F0150cCB9e8", "name": "NodeManagerV73", "compiler": "0.8.13", "balance": "-", "txcount": 0, "settings": "", "date": "5/7/2022"}
+{"address": "0xBdC4A2Cb974Edb6c44E91F41fE6c71c02D441829", "name": "Ugurcollectionss", "compiler": "0.8.13", "balance": "-", "txcount": 0, "settings": "", "date": "5/7/2022"}
+{"address": "0xc9b25a4d19e94b5d1c01f1de58692b9fceb22e0b", "name": "Rothschild_Vinery_Test1", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "5/7/2022"}
+{"address": "0x3B1f633Fe490F01BBB33Ba73B65FfAE913351c5b", "name": "DatsContract", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "5/7/2022"}
+{"address": "0x38FAa6f8a48eF05da0528B2aCb4DcF78DD95E143", "name": "AVAXToken", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "5/7/2022"}
+{"address": "0x7e33803e732457e02108cbc708bb77dbe9f6229c", "name": "OmniCounter", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "5/7/2022"}
+{"address": "0x0ac7C4d64871E3C1D81fbe2Ef66A526f67fc2C1d", "name": "NodeManagerV73", "compiler": "0.8.13", "balance": "-", "txcount": 0, "settings": "", "date": "5/7/2022"}
+{"address": "0x23d5C2DAF7A7989b865D71E9D83c04CeF358FEC2", "name": "ZoaINO", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "5/7/2022"}
+{"address": "0xf3a56436b92101353bf3daaaa1ac27ad210630e8", "name": "Rothschild_Vinery_Test", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "5/7/2022"}
+{"address": "0xf808D6063B3D4AbDbb3f5655feC28862bE7d9ACb", "name": "ZEUSV4", "compiler": "0.8.13", "balance": "-", "txcount": 0, "settings": "", "date": "5/7/2022"}
+{"address": "0x3aDaF5EAaCC16a11508AB54E3C8857965Ff429df", "name": "ZEUSV4", "compiler": "0.8.13", "balance": "-", "txcount": 0, "settings": "", "date": "5/7/2022"}
+{"address": "0x3392687C72AF7E2a5c4888B3141AC3Ce9ce4fF0f", "name": "OmniCounter", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "5/7/2022"}
+{"address": "0x15902f4e2a996F7a87795cA9484Bdb9E891281d0", "name": "Avalant", "compiler": "0.8.2", "balance": "-", "txcount": 0, "settings": "", "date": "5/7/2022"}
+{"address": "0xc9f59759fb8fc202fcbe91fe4eddca76ce6ad392", "name": "DaoSwapper", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "-", "date": "5/7/2022"}
+{"address": "0xb49A07A8F8D840cCFBf898B4438af801dFeCfFF1", "name": "CrednetialNFT", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "5/7/2022"}
+{"address": "0xdf8c5f02b68af3f615bd482e6c595faca352bbd4", "name": "allchainmeme", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "5/7/2022"}
+{"address": "0x6E26E42443Aee032edfbf7DF4825F8664E3E2198", "name": "StrattonTickets", "compiler": "0.8.8", "balance": "-", "txcount": 0, "settings": "", "date": "5/7/2022"}
+{"address": "0xe998a9b3a87EB98505Ca018E6C5Eb1aE51A4666D", "name": "StrattonNodes", "compiler": "0.8.8", "balance": "-", "txcount": 0, "settings": "", "date": "5/7/2022"}
+{"address": "0x3f6475F2A594978C813cFB7F77184c30eEB9Fa25", "name": "BWDToken", "compiler": "0.8.8", "balance": "-", "txcount": 0, "settings": "", "date": "5/7/2022"}
+{"address": "0x72797a65c8ACD594Bac942b4537C6AC1e48FCfbC", "name": "RyzeRealEstateNft", "compiler": "0.8.13", "balance": "0 AVAX", "txcount": 0, "settings": "", "date": "5/7/2022"}
+{"address": "0x72797a650135544f89F5501D0515AF9714CD43b2", "name": "RyzeLiquidTokenManager", "compiler": "0.8.13", "balance": "0 AVAX", "txcount": 0, "settings": "", "date": "5/7/2022"}
+{"address": "0x0303c95e373B8A7e3102F070F40A41c99DE12809", "name": "RedPill", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "5/7/2022"}
+{"address": "0xE641ABAD37572B40Bb553BE7DE06fc4c2C5C110B", "name": "Gainz", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "5/7/2022"}
+{"address": "0xc4857C85Be3Fb34cd6f9010b3c9BB4f24d15fc87", "name": "RedPillSanta", "compiler": "0.8.4", "balance": "10 wei", "txcount": 0, "settings": "", "date": "5/7/2022"}
+{"address": "0x07b856a9a9a2A8Ba98294095f616f8F9C029Fb94", "name": "OmnichainFungibleToken", "compiler": "0.8.0", "balance": "0 AVAX", "txcount": 0, "settings": "", "date": "5/7/2022"}
+{"address": "0xF78aCb3695ACd615b21c1bFF7741cF43d5ebb81e", "name": "ZEUSV4", "compiler": "0.8.13", "balance": "-", "txcount": 0, "settings": "", "date": "5/7/2022"}
+{"address": "0x710ea7d17a95eafd5de8f136166c20ac30cad1cb", "name": "ZEUSV4", "compiler": "0.8.13", "balance": "-", "txcount": 0, "settings": "", "date": "5/7/2022"}
+{"address": "0xe53948a368e7235a20511d3805a78f89372c8548", "name": "GoldPot", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "5/7/2022"}
+{"address": "0x8139894eeca0b5bf5bbf6036b5e3e20496c75457", "name": "CustodianWalletLogic", "compiler": "0.8.6", "balance": "0 AVAX", "txcount": 0, "settings": "-", "date": "5/7/2022"}
+{"address": "0x42459e19559926559593168bbe179ed5e5145ab2", "name": "Factory", "compiler": "0.8.6", "balance": "0 AVAX", "txcount": 0, "settings": "-", "date": "5/7/2022"}
+{"address": "0x9296e57A0Fa5c8952b07C12Ee0087B8AFD0C1591", "name": "Escrow", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "5/7/2022"}
+{"address": "0xB73A3A3Df8e936d0161b3CcDdB95dbed3687a113", "name": "USDC", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "-", "date": "5/7/2022"}
+{"address": "0x3497ac12c0fc2f586f03fb50fc409e67f39b1630", "name": "LabBunniesClub", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "5/7/2022"}
+{"address": "0xe6a8415486f0c96db35146e72b5bba12ac4a213e", "name": "SunflowerMarket", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "5/7/2022"}
+{"address": "0x49462E16f6685BEeC7768aDDA3AC3b7EEA2d34e2", "name": "CharacterNFT", "compiler": "0.8.13", "balance": "-", "txcount": 0, "settings": "-", "date": "5/7/2022"}
