@@ -20432,3 +20432,10 @@
 {"address": "0xEA06102389ebcf286c374979849214B4dFCc7D43", "name": "StargateLPOracle", "compiler": "0.8.10", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "5/11/2022"}
 {"address": "0x18a884FaEA157C378B1508514E5D11e82b27f15A", "name": "BrainNFTs", "compiler": "0.8.4", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "5/10/2022"}
 {"address": "0xEd8E9D1db662F403eC297fD279af3c50A625f5a3", "name": "ZeroExApiAdapter", "compiler": "0.6.10", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "5/10/2022"}
+{"address": "0xD6fe50c23b62e903ef180644AFf25CF1c0F623b8", "name": "PackV2", "compiler": "0.8.1", "balance": "0 AVAX", "txcount": 9484, "settings": "", "date": "5/11/2022"}
+{"address": "0xe98fe0c7851e18f6afe67e612fdbdd84271caf44", "name": "Collectible", "compiler": "0.8.1", "balance": "0 AVAX", "txcount": 3, "settings": "", "date": "5/11/2022"}
+{"address": "0x1915f96b67fc1e8fd7e11666c2d3a3489b658096", "name": "SnowsightManager", "compiler": "0.8.13", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "5/11/2022"}
+{"address": "0x6335ee1764b170fffe36426311b7bc10e3b5c28b", "name": "FractalTrees", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "5/11/2022"}
+{"address": "0x8931AbFaDdf92d39DdA353Ab0C7ef2FcCd4f3A10", "name": "AaveLeverageModule", "compiler": "0.6.10", "balance": "0 AVAX", "txcount": 3, "settings": "", "date": "5/11/2022"}
+{"address": "0x598b1e6BE11e0aE81000d7068c8F4f40b8e5898F", "name": "AaveV2", "compiler": "0.6.10", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "5/11/2022"}
+{"address": "0x96BAC90beE7F416d33601D1DC45Efb19Aca8CA62", "name": "mSpellReporterManual", "compiler": "0.8.10", "balance": "0 AVAX", "txcount": 3, "settings": "", "date": "5/11/2022"}
