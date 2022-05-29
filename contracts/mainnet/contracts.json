@@ -21293,3 +21293,7 @@
 {"address": "0x50228512F35b3F1616EF8DEb95ec0bdAA8343451", "name": "GriffinToken", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "5/27/2022"}
 {"address": "0xd94Cf1FcEa4806FF99Fb2f9310A957A186061086", "name": "Game", "compiler": "0.8.11", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "5/27/2022"}
 {"address": "0xE9FF4834e756639D7a66B8cf092Ab2CC5675F14E", "name": "GriffinToken", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "5/27/2022"}
+{"address": "0x739b9fee4d6e5317bb7d27047aa7a56b0c32adfc", "name": "SovRegistry", "compiler": "0.8.11", "balance": "0 AVAX", "txcount": 2, "settings": "", "date": "5/29/2022"}
+{"address": "0xF3C62C13197fb9FF753CcE4523BD45E256613098", "name": "Operator", "compiler": "0.8.11", "balance": "0 AVAX", "txcount": 7, "settings": "", "date": "5/29/2022"}
+{"address": "0xd31375a079eed283976f4716b134e4c0cb2ab43a", "name": "SovSavingsVaultForSA", "compiler": "0.8.11", "balance": "0 AVAX", "txcount": 4, "settings": "", "date": "5/29/2022"}
+{"address": "0xf65306371ffe9b8c135527680f16461f1a9a187b", "name": "MultinodeProtocol", "compiler": "0.8.13", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "5/29/2022"}
