@@ -1,0 +1,1714 @@
+/**
+ *Submitted for verification at snowtrace.io on 2022-06-21
+*/
+
+// SPDX-License-Identifier: MIT
+// OpenZeppelin Contracts v4.4.1 (utils/Context.sol)
+
+pragma solidity ^0.8.0;
+
+/**
+ * @dev Provides information about the current execution context, including the
+ * sender of the transaction and its data. While these are generally available
+ * via msg.sender and msg.data, they should not be accessed in such a direct
+ * manner, since when dealing with meta-transactions the account sending and
+ * paying for execution may not be the actual sender (as far as an application
+ * is concerned).
+ *
+ * This contract is only required for intermediate, library-like contracts.
+ */
+abstract contract Context {
+    function _msgSender() internal view virtual returns (address) {
+        return msg.sender;
+    }
+
+    function _msgData() internal view virtual returns (bytes calldata) {
+        return msg.data;
+    }
+}
+
+// File @openzeppelin/contracts/access/[email protected]
+
+// OpenZeppelin Contracts v4.4.1 (access/Ownable.sol)
+
+pragma solidity ^0.8.0;
+
+/**
+ * @dev Contract module which provides a basic access control mechanism, where
+ * there is an account (an owner) that can be granted exclusive access to
+ * specific functions.
+ *
+ * By default, the owner account will be the one that deploys the contract. This
+ * can later be changed with {transferOwnership}.
+ *
+ * This module is used through inheritance. It will make available the modifier
+ * `onlyOwner`, which can be applied to your functions to restrict their use to
+ * the owner.
+ */
+abstract contract Ownable is Context {
+    address private _owner;
+
+    event OwnershipTransferred(
+        address indexed previousOwner,
+        address indexed newOwner
+    );
+
+    /**
+     * @dev Initializes the contract setting the deployer as the initial owner.
+     */
+    constructor() {
+        _transferOwnership(_msgSender());
+    }
+
+    /**
+     * @dev Returns the address of the current owner.
+     */
+    function owner() public view virtual returns (address) {
+        return _owner;
+    }
+
+    /**
+     * @dev Throws if called by any account other than the owner.
+     */
+    modifier onlyOwner() {
+        require(owner() == _msgSender(), "Ownable: caller is not the owner");
+        _;
+    }
+
+    /**
+     * @dev Leaves the contract without owner. It will not be possible to call
+     * `onlyOwner` functions anymore. Can only be called by the current owner.
+     *
+     * NOTE: Renouncing ownership will leave the contract without an owner,
+     * thereby removing any functionality that is only available to the owner.
+     */
+    function renounceOwnership() public virtual onlyOwner {
+        _transferOwnership(address(0));
+    }
+
+    /**
+     * @dev Transfers ownership of the contract to a new account (`newOwner`).
+     * Can only be called by the current owner.
+     */
+    function transferOwnership(address newOwner) public virtual onlyOwner {
+        require(
+            newOwner != address(0),
+            "Ownable: new owner is the zero address"
+        );
+        _transferOwnership(newOwner);
+    }
+
+    /**
+     * @dev Transfers ownership of the contract to a new account (`newOwner`).
+     * Internal function without access restriction.
+     */
+    function _transferOwnership(address newOwner) internal virtual {
+        address oldOwner = _owner;
+        _owner = newOwner;
+        emit OwnershipTransferred(oldOwner, newOwner);
+    }
+}
+
+// File @openzeppelin/contracts/token/ERC20/[email protected]
+
+// OpenZeppelin Contracts (last updated v4.5.0) (token/ERC20/IERC20.sol)
+
+pragma solidity ^0.8.0;
+
+/**
+ * @dev Interface of the ERC20 standard as defined in the EIP.
+ */
+interface IERC20 {
+    /**
+     * @dev Returns the amount of tokens in existence.
+     */
+    function totalSupply() external view returns (uint256);
+
+    /**
+     * @dev Returns the amount of tokens owned by `account`.
+     */
+    function balanceOf(address account) external view returns (uint256);
+
+    /**
+     * @dev Moves `amount` tokens from the caller's account to `to`.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a {Transfer} event.
+     */
+    function transfer(address to, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Returns the remaining number of tokens that `spender` will be
+     * allowed to spend on behalf of `owner` through {transferFrom}. This is
+     * zero by default.
+     *
+     * This value changes when {approve} or {transferFrom} are called.
+     */
+    function allowance(address owner, address spender)
+        external
+        view
+        returns (uint256);
+
+    /**
+     * @dev Sets `amount` as the allowance of `spender` over the caller's tokens.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * IMPORTANT: Beware that changing an allowance with this method brings the risk
+     * that someone may use both the old and the new allowance by unfortunate
+     * transaction ordering. One possible solution to mitigate this race
+     * condition is to first reduce the spender's allowance to 0 and set the
+     * desired value afterwards:
+     * https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729
+     *
+     * Emits an {Approval} event.
+     */
+    function approve(address spender, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Moves `amount` tokens from `from` to `to` using the
+     * allowance mechanism. `amount` is then deducted from the caller's
+     * allowance.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a {Transfer} event.
+     */
+    function transferFrom(
+        address from,
+        address to,
+        uint256 amount
+    ) external returns (bool);
+
+    /**
+     * @dev Emitted when `value` tokens are moved from one account (`from`) to
+     * another (`to`).
+     *
+     * Note that `value` may be zero.
+     */
+    event Transfer(address indexed from, address indexed to, uint256 value);
+
+    /**
+     * @dev Emitted when the allowance of a `spender` for an `owner` is set by
+     * a call to {approve}. `value` is the new allowance.
+     */
+    event Approval(
+        address indexed owner,
+        address indexed spender,
+        uint256 value
+    );
+}
+
+// File @openzeppelin/contracts/utils/[email protected]
+
+// OpenZeppelin Contracts (last updated v4.5.0) (utils/Address.sol)
+
+pragma solidity ^0.8.1;
+
+/**
+ * @dev Collection of functions related to the address type
+ */
+library Address {
+    /**
+     * @dev Returns true if `account` is a contract.
+     *
+     * [IMPORTANT]
+     * ====
+     * It is unsafe to assume that an address for which this function returns
+     * false is an externally-owned account (EOA) and not a contract.
+     *
+     * Among others, `isContract` will return false for the following
+     * types of addresses:
+     *
+     *  - an externally-owned account
+     *  - a contract in construction
+     *  - an address where a contract will be created
+     *  - an address where a contract lived, but was destroyed
+     * ====
+     *
+     * [IMPORTANT]
+     * ====
+     * You shouldn't rely on `isContract` to protect against flash loan attacks!
+     *
+     * Preventing calls from contracts is highly discouraged. It breaks composability, breaks support for smart wallets
+     * like Gnosis Safe, and does not provide security since it can be circumvented by calling from a contract
+     * constructor.
+     * ====
+     */
+    function isContract(address account) internal view returns (bool) {
+        // This method relies on extcodesize/address.code.length, which returns 0
+        // for contracts in construction, since the code is only stored at the end
+        // of the constructor execution.
+
+        return account.code.length > 0;
+    }
+
+    /**
+     * @dev Replacement for Solidity's `transfer`: sends `amount` wei to
+     * `recipient`, forwarding all available gas and reverting on errors.
+     *
+     * https://eips.ethereum.org/EIPS/eip-1884[EIP1884] increases the gas cost
+     * of certain opcodes, possibly making contracts go over the 2300 gas limit
+     * imposed by `transfer`, making them unable to receive funds via
+     * `transfer`. {sendValue} removes this limitation.
+     *
+     * https://diligence.consensys.net/posts/2019/09/stop-using-soliditys-transfer-now/[Learn more].
+     *
+     * IMPORTANT: because control is transferred to `recipient`, care must be
+     * taken to not create reentrancy vulnerabilities. Consider using
+     * {ReentrancyGuard} or the
+     * https://solidity.readthedocs.io/en/v0.5.11/security-considerations.html#use-the-checks-effects-interactions-pattern[checks-effects-interactions pattern].
+     */
+    function sendValue(address payable recipient, uint256 amount) internal {
+        require(
+            address(this).balance >= amount,
+            "Address: insufficient balance"
+        );
+
+        (bool success, ) = recipient.call{value: amount}("");
+        require(
+            success,
+            "Address: unable to send value, recipient may have reverted"
+        );
+    }
+
+    /**
+     * @dev Performs a Solidity function call using a low level `call`. A
+     * plain `call` is an unsafe replacement for a function call: use this
+     * function instead.
+     *
+     * If `target` reverts with a revert reason, it is bubbled up by this
+     * function (like regular Solidity function calls).
+     *
+     * Returns the raw returned data. To convert to the expected return value,
+     * use https://solidity.readthedocs.io/en/latest/units-and-global-variables.html?highlight=abi.decode#abi-encoding-and-decoding-functions[`abi.decode`].
+     *
+     * Requirements:
+     *
+     * - `target` must be a contract.
+     * - calling `target` with `data` must not revert.
+     *
+     * _Available since v3.1._
+     */
+    function functionCall(address target, bytes memory data)
+        internal
+        returns (bytes memory)
+    {
+        return functionCall(target, data, "Address: low-level call failed");
+    }
+
+    /**
+     * @dev Same as {xref-Address-functionCall-address-bytes-}[`functionCall`], but with
+     * `errorMessage` as a fallback revert reason when `target` reverts.
+     *
+     * _Available since v3.1._
+     */
+    function functionCall(
+        address target,
+        bytes memory data,
+        string memory errorMessage
+    ) internal returns (bytes memory) {
+        return functionCallWithValue(target, data, 0, errorMessage);
+    }
+
+    /**
+     * @dev Same as {xref-Address-functionCall-address-bytes-}[`functionCall`],
+     * but also transferring `value` wei to `target`.
+     *
+     * Requirements:
+     *
+     * - the calling contract must have an ETH balance of at least `value`.
+     * - the called Solidity function must be `payable`.
+     *
+     * _Available since v3.1._
+     */
+    function functionCallWithValue(
+        address target,
+        bytes memory data,
+        uint256 value
+    ) internal returns (bytes memory) {
+        return
+            functionCallWithValue(
+                target,
+                data,
+                value,
+                "Address: low-level call with value failed"
+            );
+    }
+
+    /**
+     * @dev Same as {xref-Address-functionCallWithValue-address-bytes-uint256-}[`functionCallWithValue`], but
+     * with `errorMessage` as a fallback revert reason when `target` reverts.
+     *
+     * _Available since v3.1._
+     */
+    function functionCallWithValue(
+        address target,
+        bytes memory data,
+        uint256 value,
+        string memory errorMessage
+    ) internal returns (bytes memory) {
+        require(
+            address(this).balance >= value,
+            "Address: insufficient balance for call"
+        );
+        require(isContract(target), "Address: call to non-contract");
+
+        (bool success, bytes memory returndata) = target.call{value: value}(
+            data
+        );
+        return verifyCallResult(success, returndata, errorMessage);
+    }
+
+    /**
+     * @dev Same as {xref-Address-functionCall-address-bytes-}[`functionCall`],
+     * but performing a static call.
+     *
+     * _Available since v3.3._
+     */
+    function functionStaticCall(address target, bytes memory data)
+        internal
+        view
+        returns (bytes memory)
+    {
+        return
+            functionStaticCall(
+                target,
+                data,
+                "Address: low-level static call failed"
+            );
+    }
+
+    /**
+     * @dev Same as {xref-Address-functionCall-address-bytes-string-}[`functionCall`],
+     * but performing a static call.
+     *
+     * _Available since v3.3._
+     */
+    function functionStaticCall(
+        address target,
+        bytes memory data,
+        string memory errorMessage
+    ) internal view returns (bytes memory) {
+        require(isContract(target), "Address: static call to non-contract");
+
+        (bool success, bytes memory returndata) = target.staticcall(data);
+        return verifyCallResult(success, returndata, errorMessage);
+    }
+
+    /**
+     * @dev Same as {xref-Address-functionCall-address-bytes-}[`functionCall`],
+     * but performing a delegate call.
+     *
+     * _Available since v3.4._
+     */
+    function functionDelegateCall(address target, bytes memory data)
+        internal
+        returns (bytes memory)
+    {
+        return
+            functionDelegateCall(
+                target,
+                data,
+                "Address: low-level delegate call failed"
+            );
+    }
+
+    /**
+     * @dev Same as {xref-Address-functionCall-address-bytes-string-}[`functionCall`],
+     * but performing a delegate call.
+     *
+     * _Available since v3.4._
+     */
+    function functionDelegateCall(
+        address target,
+        bytes memory data,
+        string memory errorMessage
+    ) internal returns (bytes memory) {
+        require(isContract(target), "Address: delegate call to non-contract");
+
+        (bool success, bytes memory returndata) = target.delegatecall(data);
+        return verifyCallResult(success, returndata, errorMessage);
+    }
+
+    /**
+     * @dev Tool to verifies that a low level call was successful, and revert if it wasn't, either by bubbling the
+     * revert reason using the provided one.
+     *
+     * _Available since v4.3._
+     */
+    function verifyCallResult(
+        bool success,
+        bytes memory returndata,
+        string memory errorMessage
+    ) internal pure returns (bytes memory) {
+        if (success) {
+            return returndata;
+        } else {
+            // Look for revert reason and bubble it up if present
+            if (returndata.length > 0) {
+                // The easiest way to bubble the revert reason is using memory via assembly
+
+                assembly {
+                    let returndata_size := mload(returndata)
+                    revert(add(32, returndata), returndata_size)
+                }
+            } else {
+                revert(errorMessage);
+            }
+        }
+    }
+}
+
+// File @openzeppelin/contracts/token/ERC20/utils/[email protected]
+
+// OpenZeppelin Contracts v4.4.1 (token/ERC20/utils/SafeERC20.sol)
+
+pragma solidity ^0.8.0;
+
+/**
+ * @title SafeERC20
+ * @dev Wrappers around ERC20 operations that throw on failure (when the token
+ * contract returns false). Tokens that return no value (and instead revert or
+ * throw on failure) are also supported, non-reverting calls are assumed to be
+ * successful.
+ * To use this library you can add a `using SafeERC20 for IERC20;` statement to your contract,
+ * which allows you to call the safe operations as `token.safeTransfer(...)`, etc.
+ */
+library SafeERC20 {
+    using Address for address;
+
+    function safeTransfer(
+        IERC20 token,
+        address to,
+        uint256 value
+    ) internal {
+        _callOptionalReturn(
+            token,
+            abi.encodeWithSelector(token.transfer.selector, to, value)
+        );
+    }
+
+    function safeTransferFrom(
+        IERC20 token,
+        address from,
+        address to,
+        uint256 value
+    ) internal {
+        _callOptionalReturn(
+            token,
+            abi.encodeWithSelector(token.transferFrom.selector, from, to, value)
+        );
+    }
+
+    /**
+     * @dev Deprecated. This function has issues similar to the ones found in
+     * {IERC20-approve}, and its usage is discouraged.
+     *
+     * Whenever possible, use {safeIncreaseAllowance} and
+     * {safeDecreaseAllowance} instead.
+     */
+    function safeApprove(
+        IERC20 token,
+        address spender,
+        uint256 value
+    ) internal {
+        // safeApprove should only be called when setting an initial allowance,
+        // or when resetting it to zero. To increase and decrease it, use
+        // 'safeIncreaseAllowance' and 'safeDecreaseAllowance'
+        require(
+            (value == 0) || (token.allowance(address(this), spender) == 0),
+            "SafeERC20: approve from non-zero to non-zero allowance"
+        );
+        _callOptionalReturn(
+            token,
+            abi.encodeWithSelector(token.approve.selector, spender, value)
+        );
+    }
+
+    function safeIncreaseAllowance(
+        IERC20 token,
+        address spender,
+        uint256 value
+    ) internal {
+        uint256 newAllowance = token.allowance(address(this), spender) + value;
+        _callOptionalReturn(
+            token,
+            abi.encodeWithSelector(
+                token.approve.selector,
+                spender,
+                newAllowance
+            )
+        );
+    }
+
+    function safeDecreaseAllowance(
+        IERC20 token,
+        address spender,
+        uint256 value
+    ) internal {
+        unchecked {
+            uint256 oldAllowance = token.allowance(address(this), spender);
+            require(
+                oldAllowance >= value,
+                "SafeERC20: decreased allowance below zero"
+            );
+            uint256 newAllowance = oldAllowance - value;
+            _callOptionalReturn(
+                token,
+                abi.encodeWithSelector(
+                    token.approve.selector,
+                    spender,
+                    newAllowance
+                )
+            );
+        }
+    }
+
+    /**
+     * @dev Imitates a Solidity high-level call (i.e. a regular function call to a contract), relaxing the requirement
+     * on the return value: the return value is optional (but if data is returned, it must not be false).
+     * @param token The token targeted by the call.
+     * @param data The call data (encoded using abi.encode or one of its variants).
+     */
+    function _callOptionalReturn(IERC20 token, bytes memory data) private {
+        // We need to perform a low level call here, to bypass Solidity's return data size checking mechanism, since
+        // we're implementing it ourselves. We use {Address.functionCall} to perform this call, which verifies that
+        // the target address contains contract code and also asserts for success in the low-level call.
+
+        bytes memory returndata = address(token).functionCall(
+            data,
+            "SafeERC20: low-level call failed"
+        );
+        if (returndata.length > 0) {
+            // Return data is optional
+            require(
+                abi.decode(returndata, (bool)),
+                "SafeERC20: ERC20 operation did not succeed"
+            );
+        }
+    }
+}
+
+// File @openzeppelin/contracts/utils/math/[email protected]
+
+// OpenZeppelin Contracts v4.4.1 (utils/math/SafeMath.sol)
+
+pragma solidity ^0.8.0;
+
+// CAUTION
+// This version of SafeMath should only be used with Solidity 0.8 or later,
+// because it relies on the compiler's built in overflow checks.
+
+/**
+ * @dev Wrappers over Solidity's arithmetic operations.
+ *
+ * NOTE: `SafeMath` is generally not needed starting with Solidity 0.8, since the compiler
+ * now has built in overflow checking.
+ */
+library SafeMath {
+    /**
+     * @dev Returns the addition of two unsigned integers, with an overflow flag.
+     *
+     * _Available since v3.4._
+     */
+    function tryAdd(uint256 a, uint256 b)
+        internal
+        pure
+        returns (bool, uint256)
+    {
+        unchecked {
+            uint256 c = a + b;
+            if (c < a) return (false, 0);
+            return (true, c);
+        }
+    }
+
+    /**
+     * @dev Returns the substraction of two unsigned integers, with an overflow flag.
+     *
+     * _Available since v3.4._
+     */
+    function trySub(uint256 a, uint256 b)
+        internal
+        pure
+        returns (bool, uint256)
+    {
+        unchecked {
+            if (b > a) return (false, 0);
+            return (true, a - b);
+        }
+    }
+
+    /**
+     * @dev Returns the multiplication of two unsigned integers, with an overflow flag.
+     *
+     * _Available since v3.4._
+     */
+    function tryMul(uint256 a, uint256 b)
+        internal
+        pure
+        returns (bool, uint256)
+    {
+        unchecked {
+            // Gas optimization: this is cheaper than requiring 'a' not being zero, but the
+            // benefit is lost if 'b' is also tested.
+            // See: https://github.com/OpenZeppelin/openzeppelin-contracts/pull/522
+            if (a == 0) return (true, 0);
+            uint256 c = a * b;
+            if (c / a != b) return (false, 0);
+            return (true, c);
+        }
+    }
+
+    /**
+     * @dev Returns the division of two unsigned integers, with a division by zero flag.
+     *
+     * _Available since v3.4._
+     */
+    function tryDiv(uint256 a, uint256 b)
+        internal
+        pure
+        returns (bool, uint256)
+    {
+        unchecked {
+            if (b == 0) return (false, 0);
+            return (true, a / b);
+        }
+    }
+
+    /**
+     * @dev Returns the remainder of dividing two unsigned integers, with a division by zero flag.
+     *
+     * _Available since v3.4._
+     */
+    function tryMod(uint256 a, uint256 b)
+        internal
+        pure
+        returns (bool, uint256)
+    {
+        unchecked {
+            if (b == 0) return (false, 0);
+            return (true, a % b);
+        }
+    }
+
+    /**
+     * @dev Returns the addition of two unsigned integers, reverting on
+     * overflow.
+     *
+     * Counterpart to Solidity's `+` operator.
+     *
+     * Requirements:
+     *
+     * - Addition cannot overflow.
+     */
+    function add(uint256 a, uint256 b) internal pure returns (uint256) {
+        return a + b;
+    }
+
+    /**
+     * @dev Returns the subtraction of two unsigned integers, reverting on
+     * overflow (when the result is negative).
+     *
+     * Counterpart to Solidity's `-` operator.
+     *
+     * Requirements:
+     *
+     * - Subtraction cannot overflow.
+     */
+    function sub(uint256 a, uint256 b) internal pure returns (uint256) {
+        return a - b;
+    }
+
+    /**
+     * @dev Returns the multiplication of two unsigned integers, reverting on
+     * overflow.
+     *
+     * Counterpart to Solidity's `*` operator.
+     *
+     * Requirements:
+     *
+     * - Multiplication cannot overflow.
+     */
+    function mul(uint256 a, uint256 b) internal pure returns (uint256) {
+        return a * b;
+    }
+
+    /**
+     * @dev Returns the integer division of two unsigned integers, reverting on
+     * division by zero. The result is rounded towards zero.
+     *
+     * Counterpart to Solidity's `/` operator.
+     *
+     * Requirements:
+     *
+     * - The divisor cannot be zero.
+     */
+    function div(uint256 a, uint256 b) internal pure returns (uint256) {
+        return a / b;
+    }
+
+    /**
+     * @dev Returns the remainder of dividing two unsigned integers. (unsigned integer modulo),
+     * reverting when dividing by zero.
+     *
+     * Counterpart to Solidity's `%` operator. This function uses a `revert`
+     * opcode (which leaves remaining gas untouched) while Solidity uses an
+     * invalid opcode to revert (consuming all remaining gas).
+     *
+     * Requirements:
+     *
+     * - The divisor cannot be zero.
+     */
+    function mod(uint256 a, uint256 b) internal pure returns (uint256) {
+        return a % b;
+    }
+
+    /**
+     * @dev Returns the subtraction of two unsigned integers, reverting with custom message on
+     * overflow (when the result is negative).
+     *
+     * CAUTION: This function is deprecated because it requires allocating memory for the error
+     * message unnecessarily. For custom revert reasons use {trySub}.
+     *
+     * Counterpart to Solidity's `-` operator.
+     *
+     * Requirements:
+     *
+     * - Subtraction cannot overflow.
+     */
+    function sub(
+        uint256 a,
+        uint256 b,
+        string memory errorMessage
+    ) internal pure returns (uint256) {
+        unchecked {
+            require(b <= a, errorMessage);
+            return a - b;
+        }
+    }
+
+    /**
+     * @dev Returns the integer division of two unsigned integers, reverting with custom message on
+     * division by zero. The result is rounded towards zero.
+     *
+     * Counterpart to Solidity's `/` operator. Note: this function uses a
+     * `revert` opcode (which leaves remaining gas untouched) while Solidity
+     * uses an invalid opcode to revert (consuming all remaining gas).
+     *
+     * Requirements:
+     *
+     * - The divisor cannot be zero.
+     */
+    function div(
+        uint256 a,
+        uint256 b,
+        string memory errorMessage
+    ) internal pure returns (uint256) {
+        unchecked {
+            require(b > 0, errorMessage);
+            return a / b;
+        }
+    }
+
+    /**
+     * @dev Returns the remainder of dividing two unsigned integers. (unsigned integer modulo),
+     * reverting with custom message when dividing by zero.
+     *
+     * CAUTION: This function is deprecated because it requires allocating memory for the error
+     * message unnecessarily. For custom revert reasons use {tryMod}.
+     *
+     * Counterpart to Solidity's `%` operator. This function uses a `revert`
+     * opcode (which leaves remaining gas untouched) while Solidity uses an
+     * invalid opcode to revert (consuming all remaining gas).
+     *
+     * Requirements:
+     *
+     * - The divisor cannot be zero.
+     */
+    function mod(
+        uint256 a,
+        uint256 b,
+        string memory errorMessage
+    ) internal pure returns (uint256) {
+        unchecked {
+            require(b > 0, errorMessage);
+            return a % b;
+        }
+    }
+}
+
+// File @chainlink/contracts/src/v0.8/interfaces/[email protected]
+
+pragma solidity ^0.8.0;
+
+interface LinkTokenInterface {
+    function allowance(address owner, address spender)
+        external
+        view
+        returns (uint256 remaining);
+
+    function approve(address spender, uint256 value)
+        external
+        returns (bool success);
+
+    function balanceOf(address owner) external view returns (uint256 balance);
+
+    function decimals() external view returns (uint8 decimalPlaces);
+
+    function decreaseApproval(address spender, uint256 addedValue)
+        external
+        returns (bool success);
+
+    function increaseApproval(address spender, uint256 subtractedValue)
+        external;
+
+    function name() external view returns (string memory tokenName);
+
+    function symbol() external view returns (string memory tokenSymbol);
+
+    function totalSupply() external view returns (uint256 totalTokensIssued);
+
+    function transfer(address to, uint256 value)
+        external
+        returns (bool success);
+
+    function transferAndCall(
+        address to,
+        uint256 value,
+        bytes calldata data
+    ) external returns (bool success);
+
+    function transferFrom(
+        address from,
+        address to,
+        uint256 value
+    ) external returns (bool success);
+}
+
+// File @chainlink/contracts/src/v0.8/[email protected]
+
+pragma solidity ^0.8.0;
+
+contract VRFRequestIDBase {
+    /**
+     * @notice returns the seed which is actually input to the VRF coordinator
+     *
+     * @dev To prevent repetition of VRF output due to repetition of the
+     * @dev user-supplied seed, that seed is combined in a hash with the
+     * @dev user-specific nonce, and the address of the consuming contract. The
+     * @dev risk of repetition is mostly mitigated by inclusion of a blockhash in
+     * @dev the final seed, but the nonce does protect against repetition in
+     * @dev requests which are included in a single block.
+     *
+     * @param _userSeed VRF seed input provided by user
+     * @param _requester Address of the requesting contract
+     * @param _nonce User-specific nonce at the time of the request
+     */
+    function makeVRFInputSeed(
+        bytes32 _keyHash,
+        uint256 _userSeed,
+        address _requester,
+        uint256 _nonce
+    ) internal pure returns (uint256) {
+        return
+            uint256(
+                keccak256(abi.encode(_keyHash, _userSeed, _requester, _nonce))
+            );
+    }
+
+    /**
+     * @notice Returns the id for this request
+     * @param _keyHash The serviceAgreement ID to be used for this request
+     * @param _vRFInputSeed The seed to be passed directly to the VRF
+     * @return The id for this request
+     *
+     * @dev Note that _vRFInputSeed is not the seed passed by the consuming
+     * @dev contract, but the one generated by makeVRFInputSeed
+     */
+    function makeRequestId(bytes32 _keyHash, uint256 _vRFInputSeed)
+        internal
+        pure
+        returns (bytes32)
+    {
+        return keccak256(abi.encodePacked(_keyHash, _vRFInputSeed));
+    }
+}
+
+// File @chainlink/contracts/src/v0.8/[email protected]
+
+pragma solidity ^0.8.0;
+
+/** ****************************************************************************
+ * @notice Interface for contracts using VRF randomness
+ * *****************************************************************************
+ * @dev PURPOSE
+ *
+ * @dev Reggie the Random Oracle (not his real job) wants to provide randomness
+ * @dev to Vera the verifier in such a way that Vera can be sure he's not
+ * @dev making his output up to suit himself. Reggie provides Vera a public key
+ * @dev to which he knows the secret key. Each time Vera provides a seed to
+ * @dev Reggie, he gives back a value which is computed completely
+ * @dev deterministically from the seed and the secret key.
+ *
+ * @dev Reggie provides a proof by which Vera can verify that the output was
+ * @dev correctly computed once Reggie tells it to her, but without that proof,
+ * @dev the output is indistinguishable to her from a uniform random sample
+ * @dev from the output space.
+ *
+ * @dev The purpose of this contract is to make it easy for unrelated contracts
+ * @dev to talk to Vera the verifier about the work Reggie is doing, to provide
+ * @dev simple access to a verifiable source of randomness.
+ * *****************************************************************************
+ * @dev USAGE
+ *
+ * @dev Calling contracts must inherit from VRFConsumerBase, and can
+ * @dev initialize VRFConsumerBase's attributes in their constructor as
+ * @dev shown:
+ *
+ * @dev   contract VRFConsumer {
+ * @dev     constructor(<other arguments>, address _vrfCoordinator, address _link)
+ * @dev       VRFConsumerBase(_vrfCoordinator, _link) public {
+ * @dev         <initialization with other arguments goes here>
+ * @dev       }
+ * @dev   }
+ *
+ * @dev The oracle will have given you an ID for the VRF keypair they have
+ * @dev committed to (let's call it keyHash), and have told you the minimum LINK
+ * @dev price for VRF service. Make sure your contract has sufficient LINK, and
+ * @dev call requestRandomness(keyHash, fee, seed), where seed is the input you
+ * @dev want to generate randomness from.
+ *
+ * @dev Once the VRFCoordinator has received and validated the oracle's response
+ * @dev to your request, it will call your contract's fulfillRandomness method.
+ *
+ * @dev The randomness argument to fulfillRandomness is the actual random value
+ * @dev generated from your seed.
+ *
+ * @dev The requestId argument is generated from the keyHash and the seed by
+ * @dev makeRequestId(keyHash, seed). If your contract could have concurrent
+ * @dev requests open, you can use the requestId to track which seed is
+ * @dev associated with which randomness. See VRFRequestIDBase.sol for more
+ * @dev details. (See "SECURITY CONSIDERATIONS" for principles to keep in mind,
+ * @dev if your contract could have multiple requests in flight simultaneously.)
+ *
+ * @dev Colliding `requestId`s are cryptographically impossible as long as seeds
+ * @dev differ. (Which is critical to making unpredictable randomness! See the
+ * @dev next section.)
+ *
+ * *****************************************************************************
+ * @dev SECURITY CONSIDERATIONS
+ *
+ * @dev A method with the ability to call your fulfillRandomness method directly
+ * @dev could spoof a VRF response with any random value, so it's critical that
+ * @dev it cannot be directly called by anything other than this base contract
+ * @dev (specifically, by the VRFConsumerBase.rawFulfillRandomness method).
+ *
+ * @dev For your users to trust that your contract's random behavior is free
+ * @dev from malicious interference, it's best if you can write it so that all
+ * @dev behaviors implied by a VRF response are executed *during* your
+ * @dev fulfillRandomness method. If your contract must store the response (or
+ * @dev anything derived from it) and use it later, you must ensure that any
+ * @dev user-significant behavior which depends on that stored value cannot be
+ * @dev manipulated by a subsequent VRF request.
+ *
+ * @dev Similarly, both miners and the VRF oracle itself have some influence
+ * @dev over the order in which VRF responses appear on the blockchain, so if
+ * @dev your contract could have multiple VRF requests in flight simultaneously,
+ * @dev you must ensure that the order in which the VRF responses arrive cannot
+ * @dev be used to manipulate your contract's user-significant behavior.
+ *
+ * @dev Since the ultimate input to the VRF is mixed with the block hash of the
+ * @dev block in which the request is made, user-provided seeds have no impact
+ * @dev on its economic security properties. They are only included for API
+ * @dev compatability with previous versions of this contract.
+ *
+ * @dev Since the block hash of the block which contains the requestRandomness
+ * @dev call is mixed into the input to the VRF *last*, a sufficiently powerful
+ * @dev miner could, in principle, fork the blockchain to evict the block
+ * @dev containing the request, forcing the request to be included in a
+ * @dev different block with a different hash, and therefore a different input
+ * @dev to the VRF. However, such an attack would incur a substantial economic
+ * @dev cost. This cost scales with the number of blocks the VRF oracle waits
+ * @dev until it calls responds to a request.
+ */
+abstract contract VRFConsumerBase is VRFRequestIDBase {
+    /**
+     * @notice fulfillRandomness handles the VRF response. Your contract must
+     * @notice implement it. See "SECURITY CONSIDERATIONS" above for important
+     * @notice principles to keep in mind when implementing your fulfillRandomness
+     * @notice method.
+     *
+     * @dev VRFConsumerBase expects its subcontracts to have a method with this
+     * @dev signature, and will call it once it has verified the proof
+     * @dev associated with the randomness. (It is triggered via a call to
+     * @dev rawFulfillRandomness, below.)
+     *
+     * @param requestId The Id initially returned by requestRandomness
+     * @param randomness the VRF output
+     */
+    function fulfillRandomness(bytes32 requestId, uint256 randomness)
+        internal
+        virtual;
+
+    /**
+     * @dev In order to keep backwards compatibility we have kept the user
+     * seed field around. We remove the use of it because given that the blockhash
+     * enters later, it overrides whatever randomness the used seed provides.
+     * Given that it adds no security, and can easily lead to misunderstandings,
+     * we have removed it from usage and can now provide a simpler API.
+     */
+    uint256 private constant USER_SEED_PLACEHOLDER = 0;
+
+    /**
+     * @notice requestRandomness initiates a request for VRF output given _seed
+     *
+     * @dev The fulfillRandomness method receives the output, once it's provided
+     * @dev by the Oracle, and verified by the vrfCoordinator.
+     *
+     * @dev The _keyHash must already be registered with the VRFCoordinator, and
+     * @dev the _fee must exceed the fee specified during registration of the
+     * @dev _keyHash.
+     *
+     * @dev The _seed parameter is vestigial, and is kept only for API
+     * @dev compatibility with older versions. It can't *hurt* to mix in some of
+     * @dev your own randomness, here, but it's not necessary because the VRF
+     * @dev oracle will mix the hash of the block containing your request into the
+     * @dev VRF seed it ultimately uses.
+     *
+     * @param _keyHash ID of public key against which randomness is generated
+     * @param _fee The amount of LINK to send with the request
+     *
+     * @return requestId unique ID for this request
+     *
+     * @dev The returned requestId can be used to distinguish responses to
+     * @dev concurrent requests. It is passed as the first argument to
+     * @dev fulfillRandomness.
+     */
+    function requestRandomness(bytes32 _keyHash, uint256 _fee)
+        internal
+        returns (bytes32 requestId)
+    {
+        LINK.transferAndCall(
+            vrfCoordinator,
+            _fee,
+            abi.encode(_keyHash, USER_SEED_PLACEHOLDER)
+        );
+        // This is the seed passed to VRFCoordinator. The oracle will mix this with
+        // the hash of the block containing this request to obtain the seed/input
+        // which is finally passed to the VRF cryptographic machinery.
+        uint256 vRFSeed = makeVRFInputSeed(
+            _keyHash,
+            USER_SEED_PLACEHOLDER,
+            address(this),
+            nonces[_keyHash]
+        );
+        // nonces[_keyHash] must stay in sync with
+        // VRFCoordinator.nonces[_keyHash][this], which was incremented by the above
+        // successful LINK.transferAndCall (in VRFCoordinator.randomnessRequest).
+        // This provides protection against the user repeating their input seed,
+        // which would result in a predictable/duplicate output, if multiple such
+        // requests appeared in the same block.
+        nonces[_keyHash] = nonces[_keyHash] + 1;
+        return makeRequestId(_keyHash, vRFSeed);
+    }
+
+    LinkTokenInterface internal immutable LINK;
+    address private immutable vrfCoordinator;
+
+    // Nonces for each VRF key from which randomness has been requested.
+    //
+    // Must stay in sync with VRFCoordinator[_keyHash][this]
+    mapping(bytes32 => uint256) /* keyHash */ /* nonce */
+        private nonces;
+
+    /**
+     * @param _vrfCoordinator address of VRFCoordinator contract
+     * @param _link address of LINK token contract
+     *
+     * @dev https://docs.chain.link/docs/link-token-contracts
+     */
+    constructor(address _vrfCoordinator, address _link) {
+        vrfCoordinator = _vrfCoordinator;
+        LINK = LinkTokenInterface(_link);
+    }
+
+    // rawFulfillRandomness is called by VRFCoordinator when it receives a valid VRF
+    // proof. rawFulfillRandomness then calls fulfillRandomness, after validating
+    // the origin of the call
+    function rawFulfillRandomness(bytes32 requestId, uint256 randomness)
+        external
+    {
+        require(
+            msg.sender == vrfCoordinator,
+            "Only VRFCoordinator can fulfill"
+        );
+        fulfillRandomness(requestId, randomness);
+    }
+}
+
+// File @chainlink/contracts/src/v0.8/interfaces/[email protected]
+
+pragma solidity ^0.8.0;
+
+interface AggregatorV3Interface {
+    function decimals() external view returns (uint8);
+
+    function description() external view returns (string memory);
+
+    function version() external view returns (uint256);
+
+    // getRoundData and latestRoundData should both raise "No data present"
+    // if they do not have data to report, instead of returning unset values
+    // which could be misinterpreted as actual reported values.
+    function getRoundData(uint80 _roundId)
+        external
+        view
+        returns (
+            uint80 roundId,
+            int256 answer,
+            uint256 startedAt,
+            uint256 updatedAt,
+            uint80 answeredInRound
+        );
+
+    function latestRoundData()
+        external
+        view
+        returns (
+            uint80 roundId,
+            int256 answer,
+            uint256 startedAt,
+            uint256 updatedAt,
+            uint80 answeredInRound
+        );
+}
+
+// File contracts/XZeus.sol
+pragma solidity ^0.8.4;
+pragma abicoder v2;
+
+contract XZeus is Ownable, VRFConsumerBase {
+    using SafeERC20 for IERC20;
+    using SafeMath for uint256;
+
+    // Info of each user.
+    struct UserInfo {
+        uint256 amount; // How many staking tokens the user has provided.
+        uint256 rewardDebt; // Reward debt. See explanation below.
+    }
+
+    // Info of each pool.
+    struct PoolInfo {
+        IERC20 stakingToken; // Address of staking token contract.
+        uint256 allocPoint; // How many allocation points assigned to this pool. ZEUSs to distribute per block.
+        uint256 lastRewardBlock; // Last block number that ZEUSs distribution occurs.
+        uint256 accZeusPerShare; // Accumulated ZEUSs per share, times PRECISION_FACTOR. See below.
+        uint256 totalShares; // Balance of total staked amount in the pool
+    }
+
+    // Info of penalty.
+    struct PenaltyInfo {
+        uint256 criteria; // Criteria minimum
+        uint256 penalty; // Fee in usd
+    }
+
+    // Info of random number request
+    struct RandomRequestInfo {
+        address requester;
+        uint256 poolId;
+        uint256 withdrawalAmount;
+    }
+
+    // The REWARD TOKEN
+    IERC20 public rewardToken;
+
+    // The REWARD HOLDER
+    address public rewardHolder;
+
+    // ZEUS token fee recipient
+    address public feeRecipient;
+
+    // ZEUS tokens created per block.
+    uint256 public rewardPerBlock;
+
+    // Bonus muliplier for early zeus makers.
+    uint256 public BONUS_MULTIPLIER = 100;
+
+    // precision factor
+    uint256 public PRECISION_FACTOR = 1e24;
+
+    // Info of each pool.
+    PoolInfo[] public poolInfo;
+    // Info of each pool.
+    PenaltyInfo[] public penaltyInfo;
+
+    // Info of each user that stakes staking tokens.
+    mapping(uint256 => mapping(address => UserInfo)) public userInfo;
+    // Total allocation poitns. Must be the sum of all allocation points in all pools.
+    uint256 public totalAllocPoint = 0;
+
+    // chainlink VRF variables
+    bytes32 internal keyHash;
+    uint256 internal fee;
+    mapping(bytes32 => RandomRequestInfo) randomRequestInfo; //  => requestId => requester Info
+    uint256 bonusAmount;
+
+    AggregatorV3Interface internal avaxPriceFeed;
+
+    event Deposit(address indexed user, uint256 indexed pid, uint256 amount);
+    event Withdraw(address indexed user, uint256 indexed pid, uint256 amount);
+    event EmergencyWithdraw(
+        address indexed user,
+        uint256 indexed pid,
+        uint256 amount
+    );
+
+    /**
+     * @notice Constructor. Set reward token, reward emission rate and create a new pool with the params
+     * @param _stakingToken  address of token of first pool
+     * @param _rewardToken  address of reward token
+     * @param _rewardPerBlock  reward emission rate
+     * @param _rewardHolder  address of reward holder who has enough reward tokens
+     * @param _feeRecipient  address of fee recipient
+     * @param _bonusAmount  amoount of random bonus
+     * @param _vrfCoordinator address of VRFCoordinator contract
+     * @param _linkToken address of link token
+     * @param _fee fee
+     * @param _keyHash keyHash
+     */
+    constructor(
+        // xStake constructor params
+        IERC20 _stakingToken,
+        IERC20 _rewardToken,
+        uint256 _rewardPerBlock,
+        address _rewardHolder,
+        address _feeRecipient,
+        uint256 _bonusAmount,
+        // chainlink constructor params
+        address _vrfCoordinator,
+        address _linkToken,
+        bytes32 _keyHash,
+        uint256 _fee
+    )
+        VRFConsumerBase(
+            _vrfCoordinator, // VRF Coordinator
+            _linkToken // LINK Token
+        )
+    {
+        require(
+            address(_stakingToken) != address(0),
+            "Zero address: stakingToken"
+        );
+        require(
+            address(_rewardToken) != address(0),
+            "Zero address: rewardToken"
+        );
+        require(_rewardHolder != address(0), "Zero address: rewardHolder");
+        require(_feeRecipient != address(0), "Zero address: feeRecipient");
+
+        rewardToken = _rewardToken;
+        rewardPerBlock = _rewardPerBlock;
+
+        // staking pool
+        poolInfo.push(
+            PoolInfo({
+                stakingToken: _stakingToken,
+                allocPoint: 1000,
+                lastRewardBlock: block.number,
+                accZeusPerShare: 0,
+                totalShares: 0
+            })
+        );
+
+        totalAllocPoint = 1000;
+        rewardHolder = _rewardHolder;
+        feeRecipient = _feeRecipient;
+        bonusAmount = _bonusAmount;
+
+        // set chainlink params
+        keyHash = _keyHash;
+        fee = _fee;
+
+        /**
+         * Network: Avalanche Mainnet
+         * Aggregator: AVAX/USD
+         * Address: 0x0A77230d17318075983913bC2145DB16C7366156
+         */
+        avaxPriceFeed = AggregatorV3Interface(
+            0x0A77230d17318075983913bC2145DB16C7366156
+        );
+    }
+
+    /**
+     * @notice Return a length of pools
+     */
+    function poolLength() external view returns (uint256) {
+        return poolInfo.length;
+    }
+
+    /**
+     * @notice Return reward multiplier over the given _from to _to block.
+     * @param _from  from block number
+     * @param _to  to block number
+     */
+    function getMultiplier(uint256 _from, uint256 _to)
+        public
+        view
+        returns (uint256)
+    {
+        return _to.sub(_from).mul(BONUS_MULTIPLIER).div(100);
+    }
+
+    /**
+     * @notice Get penalty from deposit amount
+     * @param _amount  amount
+     */
+    function getPenalty(uint256 _amount) public view returns (uint256) {
+        uint256 penalty;
+        if (penaltyInfo.length == 0) return 0;
+
+        for (uint256 i = 0; i < penaltyInfo.length; i++) {
+            if (_amount > penaltyInfo[i].criteria) {
+                break;
+            }
+            penalty = penaltyInfo[i].penalty;
+        }
+
+        return penalty;
+    }
+
+    /**
+     * @notice View function to see pending Reward on frontend.
+     * @param _pid  pool id
+     * @param _user  user address
+     */
+    function pendingReward(uint256 _pid, address _user)
+        external
+        view
+        returns (uint256)
+    {
+        PoolInfo storage pool = poolInfo[_pid];
+        UserInfo storage user = userInfo[_pid][_user];
+        uint256 accZeusPerShare = pool.accZeusPerShare;
+        uint256 stakingTokenSupply = pool.totalShares;
+        if (block.number > pool.lastRewardBlock && stakingTokenSupply != 0) {
+            uint256 multiplier = getMultiplier(
+                pool.lastRewardBlock,
+                block.number
+            );
+            uint256 zeusReward = multiplier
+                .mul(rewardPerBlock)
+                .mul(pool.allocPoint)
+                .div(totalAllocPoint);
+            accZeusPerShare = accZeusPerShare.add(
+                zeusReward.mul(PRECISION_FACTOR).div(stakingTokenSupply)
+            );
+        }
+        return
+            user.amount.mul(accZeusPerShare).div(PRECISION_FACTOR).sub(
+                user.rewardDebt
+            );
+    }
+
+    /**
+     * @notice Add a new stakingToken to the pool. Can only be called by the owner.
+     * XXX DO NOT add the same staking token more than once. Rewards will be messed up if you do.
+     * @param _allocPoint  reward allocation point
+     * @param _stakingToken  token address
+     */
+    function add(uint256 _allocPoint, IERC20 _stakingToken) public onlyOwner {
+        require(
+            address(_stakingToken) != address(0),
+            "Staking token: Zero address"
+        );
+        for (uint256 i = 0; i < poolInfo.length; i++) {
+            if (address(poolInfo[i].stakingToken) == address(_stakingToken))
+                revert("Pool duplicated");
+        }
+
+        massUpdatePools();
+        totalAllocPoint = totalAllocPoint.add(_allocPoint);
+        poolInfo.push(
+            PoolInfo({
+                stakingToken: _stakingToken,
+                allocPoint: _allocPoint,
+                lastRewardBlock: block.number,
+                accZeusPerShare: 0,
+                totalShares: 0
+            })
+        );
+    }
+
+    /**
+     * @notice Update the given pool's ZEUS allocation point. Can only be called by the owner.
+     * @param _pid  pool id
+     * @param _allocPoint  reward allocation point
+     */
+    function set(uint256 _pid, uint256 _allocPoint) public onlyOwner {
+        massUpdatePools();
+        uint256 prevAllocPoint = poolInfo[_pid].allocPoint;
+        poolInfo[_pid].allocPoint = _allocPoint;
+        if (prevAllocPoint != _allocPoint) {
+            totalAllocPoint = totalAllocPoint.sub(prevAllocPoint).add(
+                _allocPoint
+            );
+        }
+    }
+
+    /**
+     * @notice Update multiplier. Can only be called by the owner.
+     * @param _multiplierNumber  _multiplier value
+     */
+    function updateMultiplier(uint256 _multiplierNumber) public onlyOwner {
+        require(_multiplierNumber >= 100, "Invalid multipler number");
+        BONUS_MULTIPLIER = _multiplierNumber;
+    }
+
+    /**
+     * @notice Add penalty info
+     * @param _criteria  penalty criteria amount
+     * @param _penalty  penalty point
+     */
+    function setPenaltyInfo(uint256 _criteria, uint256 _penalty)
+        public
+        onlyOwner
+    {
+        uint256 penaltyLength = penaltyInfo.length;
+        require(_penalty < 10000, "Penalty error: >= 100%");
+        if (penaltyLength == 0) {
+            penaltyInfo.push(
+                PenaltyInfo({criteria: _criteria, penalty: _penalty})
+            );
+        } else {
+            require(
+                _criteria > penaltyInfo[penaltyLength - 1].criteria,
+                "Criteria error: < last criteria"
+            );
+
+            penaltyInfo.push(
+                PenaltyInfo({criteria: _criteria, penalty: _penalty})
+            );
+        }
+    }
+
+    /**
+     * @notice Update reward holder
+     * @param _rewardHolder  address of reward holder who has enough reward tokens
+     */
+    function setRewardHolder(address _rewardHolder) public onlyOwner {
+        require(_rewardHolder != address(0), "Zero address: rewardHolder");
+        rewardHolder = _rewardHolder;
+    }
+
+    /**
+     * @notice Update fee recipient
+     * @param _feeRecipient  address of fee recipient
+     */
+    function setFeeRecipient(address _feeRecipient) public onlyOwner {
+        require(_feeRecipient != address(0), "Zero address: feeRecipient");
+        feeRecipient = _feeRecipient;
+    }
+
+    /**
+     * @notice Update reward emission rate
+     * @param _rewardPerBlock  reward emission rate
+     */
+    function setRewardPerBlock(uint256 _rewardPerBlock) public onlyOwner {
+        rewardPerBlock = _rewardPerBlock;
+    }
+
+    /**
+     * @notice Update bonus amount
+     * @param _bonusAmount  bonus amount
+     */
+    function setBonusAmount(uint256 _bonusAmount) public onlyOwner {
+        bonusAmount = _bonusAmount;
+    }
+
+    /**
+     * @notice Update reward variables of the given pool to be up-to-date.
+     * @param _pid  pool id
+     */
+    function updatePool(uint256 _pid) public {
+        PoolInfo storage pool = poolInfo[_pid];
+        if (block.number <= pool.lastRewardBlock) {
+            return;
+        }
+        uint256 stakingTokenSupply = pool.totalShares;
+        if (stakingTokenSupply == 0) {
+            pool.lastRewardBlock = block.number;
+            return;
+        }
+        uint256 multiplier = getMultiplier(pool.lastRewardBlock, block.number);
+        uint256 zeusReward = multiplier
+            .mul(rewardPerBlock)
+            .mul(pool.allocPoint)
+            .div(totalAllocPoint);
+        pool.accZeusPerShare = pool.accZeusPerShare.add(
+            zeusReward.mul(PRECISION_FACTOR).div(stakingTokenSupply)
+        );
+        pool.lastRewardBlock = block.number;
+    }
+
+    /**
+     * @notice Update reward variables for all pools
+     */
+    function massUpdatePools() public {
+        uint256 length = poolInfo.length;
+        for (uint256 pid = 0; pid < length; ++pid) {
+            updatePool(pid);
+        }
+    }
+
+    /**
+     * @notice Deposit tokens
+     * @param _pid  pool id
+     * @param _amount  token amount
+     */
+    function deposit(uint256 _pid, uint256 _amount) public {
+        PoolInfo storage pool = poolInfo[_pid];
+        UserInfo storage user = userInfo[_pid][msg.sender];
+
+        updatePool(_pid);
+        if (user.amount > 0) {
+            uint256 pending = user
+                .amount
+                .mul(pool.accZeusPerShare)
+                .div(PRECISION_FACTOR)
+                .sub(user.rewardDebt);
+            if (pending > 0) {
+                rewardToken.safeTransferFrom(
+                    rewardHolder,
+                    address(msg.sender),
+                    pending
+                );
+            }
+        }
+
+        uint256 feeAmount = getPenalty(_amount) / 10000;
+        if (_amount > 0) {
+            pool.stakingToken.safeTransferFrom(
+                address(msg.sender),
+                address(this),
+                _amount.sub(feeAmount)
+            );
+            pool.stakingToken.safeTransferFrom(
+                address(msg.sender),
+                feeRecipient,
+                feeAmount
+            );
+            pool.totalShares += _amount.sub(feeAmount);
+            user.amount = user.amount.add(_amount).sub(feeAmount);
+        }
+        user.rewardDebt = user.amount.mul(pool.accZeusPerShare).div(
+            PRECISION_FACTOR
+        );
+
+        emit Deposit(msg.sender, _pid, _amount);
+    }
+
+    /**
+     * @notice Withdraw tokens
+     * @param _pid  pool id
+     * @param _amount  token amount
+     */
+    function withdraw(uint256 _pid, uint256 _amount) public {
+        bytes32 requestId = requestRandomNumber();
+        randomRequestInfo[requestId] = RandomRequestInfo({
+            requester: msg.sender,
+            poolId: _pid,
+            withdrawalAmount: _amount
+        });
+    }
+
+    /**
+     * @notice Withdraw without caring about rewards. EMERGENCY ONLY.
+     * @param _pid  pool id
+     */
+    function emergencyWithdraw(uint256 _pid) public {
+        PoolInfo storage pool = poolInfo[_pid];
+        UserInfo storage user = userInfo[_pid][msg.sender];
+
+        pool.stakingToken.safeTransfer(address(msg.sender), user.amount);
+        pool.totalShares -= user.amount;
+        emit EmergencyWithdraw(msg.sender, _pid, user.amount);
+
+        user.amount = 0;
+        user.rewardDebt = 0;
+    }
+
+    /**
+     * @notice Requests randomness
+     * @return requestId
+     */
+    function requestRandomNumber() internal returns (bytes32 requestId) {
+        require(
+            LINK.balanceOf(address(this)) >= fee,
+            "Not enough LINK - fill contract with faucet"
+        );
+        return requestRandomness(keyHash, fee);
+    }
+
+    /**
+     * @notice Callback function used by VRF Coordinator
+     * @param requestId requestId
+     * @param randomness randomness number
+     */
+    function fulfillRandomness(bytes32 requestId, uint256 randomness)
+        internal
+        override
+    {
+        RandomRequestInfo memory randomRequestUserInfo = randomRequestInfo[
+            requestId
+        ];
+        address requester = randomRequestUserInfo.requester;
+        uint256 poolId = randomRequestUserInfo.poolId;
+        uint256 withdrawalAmount = randomRequestUserInfo.withdrawalAmount;
+
+        PoolInfo storage pool = poolInfo[poolId];
+        UserInfo storage user = userInfo[poolId][requester];
+
+        require(user.amount >= withdrawalAmount, "withdraw: not good");
+
+        updatePool(poolId);
+
+        uint256 pending = user
+            .amount
+            .mul(pool.accZeusPerShare)
+            .div(PRECISION_FACTOR)
+            .sub(user.rewardDebt);
+        uint256 additionalBonus = randomness % 2 == 0 ? bonusAmount : 0;
+
+        if (pending + additionalBonus > 0) {
+            rewardToken.safeTransferFrom(
+                rewardHolder,
+                address(msg.sender),
+                pending + additionalBonus
+            );
+        }
+        if (withdrawalAmount > 0) {
+            user.amount = user.amount.sub(withdrawalAmount);
+            pool.stakingToken.safeTransfer(
+                address(msg.sender),
+                withdrawalAmount
+            );
+            pool.totalShares -= withdrawalAmount;
+        }
+        user.rewardDebt = user.amount.mul(pool.accZeusPerShare).div(
+            PRECISION_FACTOR
+        );
+
+        emit Withdraw(msg.sender, poolId, withdrawalAmount);
+    }
+
+    /**
+     * @notice Get latest AVAX price
+     */
+    function getLatestAvaxPrice() external view returns (int256) {
+        (, int256 price, , , ) = avaxPriceFeed.latestRoundData();
+        return price;
+    }
+}
