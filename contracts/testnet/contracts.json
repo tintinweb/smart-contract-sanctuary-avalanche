@@ -23459,3 +23459,25 @@
 {"address": "0x42402e9B746133882AEfb593ba58D117dFc8684E", "name": "Loki", "compiler": "0.8.7", "balance": "0.02 AVAX", "txcount": 0, "settings": "", "date": "6/22/2022"}
 {"address": "0x7171c84A21E3a3d64920E567ba8ACE870609d922", "name": "AaveSuperErc20", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "6/22/2022"}
 {"address": "0x87b5995AeF2A0d30213D81AAA568743D5aEe2879", "name": "ProjectInfo", "compiler": "0.8.13", "balance": "-", "txcount": 0, "settings": "", "date": "6/22/2022"}
+{"address": "0xe8c6ee6652cf5478996dce6a81809d840c211c08", "name": "Address", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "-", "date": "6/23/2022"}
+{"address": "0x068b4757f07ab2c4f4d12cc0e980c67930ad1045", "name": "Address", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "-", "date": "6/23/2022"}
+{"address": "0x4e2056b718abf1ac07a6321003b01e904b96c507", "name": "RothschildWinery", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "6/23/2022"}
+{"address": "0x5624edc54E47Ed090f87FDd055BF466ba2d431FB", "name": "InoFactory", "compiler": "0.8.13", "balance": "-", "txcount": 0, "settings": "", "date": "6/23/2022"}
+{"address": "0x26041873c48c3f2a400d7955cBf8BC56bb54A5EB", "name": "GLXLuckyWheel", "compiler": "0.8.15", "balance": "-", "txcount": 0, "settings": "", "date": "6/23/2022"}
+{"address": "0x9f46dDE750F45be77DdFec8D242d803F1a017CE2", "name": "TestERC20Token", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "6/23/2022"}
+{"address": "0xBf15D2122f381318d4E40180dbdD5F32bE1c72DB", "name": "MARKETPLACE", "compiler": "0.8.15", "balance": "-", "txcount": 0, "settings": "-", "date": "6/23/2022"}
+{"address": "0x449E19Cf7970649f30E075697dC02F1B9a3C2072", "name": "DROIDS", "compiler": "0.8.15", "balance": "-", "txcount": 0, "settings": "", "date": "6/23/2022"}
+{"address": "0x5c0f6E38E584cad9959A8Dc5E31603eb322AaD31", "name": "DROIDS", "compiler": "0.8.15", "balance": "-", "txcount": 0, "settings": "", "date": "6/23/2022"}
+{"address": "0x84378d8557b12c7559d069729132254fe6190916", "name": "AaveLeverageErc20", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "6/23/2022"}
+{"address": "0xb358bb8293f17d4a365058c9c641c913252a4fd0", "name": "AaveLeverageAVAX", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 0, "settings": "", "date": "6/23/2022"}
+{"address": "0xA58D1841f1B16b7b56452e2b5c65C961C162228D", "name": "DROIDS", "compiler": "0.8.15", "balance": "-", "txcount": 0, "settings": "", "date": "6/23/2022"}
+{"address": "0xe8a5473Fa57A8B8848108eAEeE1FFfE31081B498", "name": "DROIDS", "compiler": "0.8.15", "balance": "-", "txcount": 0, "settings": "", "date": "6/23/2022"}
+{"address": "0xD08373e91Ce4C20A858Be4d3D3B356f8d60dcFd9", "name": "DROIDS", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "6/23/2022"}
+{"address": "0xA173F3c1E9079F746ceE11C2BD9A650b78Db0c6c", "name": "MiddleLayer", "compiler": "0.8.13", "balance": "0 AVAX", "txcount": 0, "settings": "", "date": "6/23/2022"}
+{"address": "0x42819EeeaF9C0aB936976dB9e2A125674f1C5817", "name": "DROIDS", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "6/23/2022"}
+{"address": "0x1f4a78260F9cD4addf474584FF334DBA32045c1e", "name": "DROIDS", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "6/22/2022"}
+{"address": "0xdFACC171996394247C273f0285345eE594899F13", "name": "DROIDS", "compiler": "0.8.15", "balance": "-", "txcount": 0, "settings": "", "date": "6/22/2022"}
+{"address": "0x9c20420E61eFfe75C4A5978A29854Eda2F0dBd98", "name": "large", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "6/22/2022"}
+{"address": "0xf74a7352e801edD2aD5B3CB351E59512EF052110", "name": "Vyper_contract", "compiler": "vyper:0.3.3", "balance": "-", "txcount": 0, "settings": "", "date": "6/22/2022"}
+{"address": "0x5D82B749227931225F13f9D0F02D383f39d336ce", "name": "DROIDS", "compiler": "0.8.15", "balance": "-", "txcount": 0, "settings": "", "date": "6/22/2022"}
+{"address": "0x37bb1aa8a339b65aed51b6354a2518011f668a9b", "name": "CallBondDepository", "compiler": "0.8.15", "balance": "-", "txcount": 0, "settings": "", "date": "6/22/2022"}
