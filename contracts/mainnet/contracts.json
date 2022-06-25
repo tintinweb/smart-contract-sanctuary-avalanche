@@ -22516,3 +22516,17 @@
 {"address": "0xb6865617ab85e47daf84157364df3e87686a6ab9", "name": "SodaStationV3", "compiler": "0.8.15", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "6/24/2022"}
 {"address": "0xeb4f5d458b135a8993239f91ab3f45ab92cd519e", "name": "CryptoBroskis", "compiler": "0.8.15", "balance": "0 AVAX", "txcount": 8, "settings": "-", "date": "6/23/2022"}
 {"address": "0x4e664284b7fbd10633768d59c17d959d9cb8dee2", "name": "SimpleRewarderPerSec", "compiler": "0.8.4", "balance": "0 AVAX", "txcount": 146, "settings": "", "date": "6/23/2022"}
+{"address": "0x14e0Ca4Ec27C2dD1E544Df1168b64d33D51EAf37", "name": "Hall", "compiler": "0.6.12", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "6/25/2022"}
+{"address": "0x11CeA873dD8aDB5feb97875C317c771D887629FC", "name": "EvilBeanz", "compiler": "0.8.10", "balance": "0 AVAX", "txcount": 8, "settings": "", "date": "6/25/2022"}
+{"address": "0x8e2bEf70778461ebaAC58D4f04F7dE9633FBa2D0", "name": "JumpRateModelV2", "compiler": "0.5.16", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "6/25/2022"}
+{"address": "0xd97136B7caB42058F75E05e3D8C5C87CceaC8Bc3", "name": "TokenChild", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 11, "settings": "", "date": "6/25/2022"}
+{"address": "0x5ac9e12eda36ef773a98a4102dd95c43a1f7e500", "name": "Treasury", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 3, "settings": "", "date": "6/25/2022"}
+{"address": "0x7958804a9116F41E35E87223210722E48881df0E", "name": "Pair", "compiler": "0.6.12", "balance": "0 AVAX", "txcount": 0, "settings": "-", "date": "6/25/2022"}
+{"address": "0xbf90d619c11c2c3228e7580e17b2a1023e461eb7", "name": "fMOONS", "compiler": "0.8.15", "balance": "0 AVAX", "txcount": 6, "settings": "", "date": "6/25/2022"}
+{"address": "0xe8b4f14dd19873379d21c5c71f7c9bd26ef98295", "name": "ScaGenesisRewardPool", "compiler": "0.6.12", "balance": "0 AVAX", "txcount": 2, "settings": "", "date": "6/25/2022"}
+{"address": "0x26af949c62b62ea7bf79562011d85b00953cf3d7", "name": "Cheemspad", "compiler": "0.8.9", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "6/25/2022"}
+{"address": "0x93eb4003a17119cbc3704dfd2cf218b5f2837fc6", "name": "CRYPTOWINX", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 10, "settings": "-", "date": "6/25/2022"}
+{"address": "0x89557E29812f1967dd40E087A9f8BA0073B5DD8A", "name": "TokenCrowdsale", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "6/24/2022"}
+{"address": "0x3b1ffa35deb9235d0a87b95299b602b426a21075", "name": "BTBNG", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 3, "settings": "", "date": "6/24/2022"}
+{"address": "0x5DB59F9cE5D832013faF387F609875311e433ABD", "name": "Xross", "compiler": "0.6.12", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "6/24/2022"}
+{"address": "0xde0F6167cec79A127e6973dAa0923aD1E87b8BCC", "name": "TokenCrowdsale", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "6/24/2022"}
