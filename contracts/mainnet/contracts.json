@@ -22530,3 +22530,4 @@
 {"address": "0x3b1ffa35deb9235d0a87b95299b602b426a21075", "name": "BTBNG", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 3, "settings": "", "date": "6/24/2022"}
 {"address": "0x5DB59F9cE5D832013faF387F609875311e433ABD", "name": "Xross", "compiler": "0.6.12", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "6/24/2022"}
 {"address": "0xde0F6167cec79A127e6973dAa0923aD1E87b8BCC", "name": "TokenCrowdsale", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "6/24/2022"}
+{"address": "0x7EBcBF7B4bB161a80177aA561433cBCEAe284e0D", "name": "EvilBeanz", "compiler": "0.8.10", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "6/25/2022"}
