@@ -22649,3 +22649,11 @@
 {"address": "0xF274A1D3a794E210d6AF9d77eb966f01FD9a646f", "name": "Vyper_contract", "compiler": "vyper:0.3.1", "balance": "0 AVAX", "txcount": 1, "settings": "-", "date": "6/28/2022"}
 {"address": "0x9AC07b6b2A2455ECe12E57C0e1EC21b51181A4e6", "name": "FroyoVault", "compiler": "0.6.12", "balance": "0 AVAX", "txcount": 67, "settings": "", "date": "6/28/2022"}
 {"address": "0x0a8D5435a43c8d63b47D6E61F5eE88868A1b8Ed9", "name": "BidifyFactory", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 4, "settings": "-", "date": "6/27/2022"}
+{"address": "0xC2b16dDaa41c1910A094B6fA7b083329662476a2", "name": "GameV2", "compiler": "0.6.12", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "6/28/2022"}
+{"address": "0x61CF0D0a26e8e2D42b8f737a186e984B917e60A3", "name": "GhoulishDivas", "compiler": "0.8.10", "balance": "0 AVAX", "txcount": 3, "settings": "", "date": "6/28/2022"}
+{"address": "0xadD1c4C7858de73C9E0E79368073bb7B81855E0B", "name": "SecondaryPresale", "compiler": "0.8.4", "balance": "0 AVAX", "txcount": 5, "settings": "", "date": "6/28/2022"}
+{"address": "0x9AAfec8030ce0A75d1b4b613BE2A42B9962C062a", "name": "fsGLPOracle", "compiler": "0.8.3", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "6/28/2022"}
+{"address": "0xa89cB500a4A82251CF510D67bDc0dAe8253dD5b5", "name": "YieldYakPermissiveStrategy2", "compiler": "0.8.3", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "6/28/2022"}
+{"address": "0x5d65212d62BE72ed3F1FA27B5AA357944Fa43a29", "name": "TokenActivation", "compiler": "0.8.3", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "6/28/2022"}
+{"address": "0x57F6a4201Df8c18420E839e2CbDC7400A0A73128", "name": "OracleActivation", "compiler": "0.8.3", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "6/28/2022"}
+{"address": "0x6821189A4fc9EF5cc00892D207BEc99C56A7425f", "name": "TimelockController", "compiler": "0.8.9", "balance": "0 AVAX", "txcount": 3, "settings": "", "date": "6/28/2022"}
