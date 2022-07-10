@@ -23232,3 +23232,16 @@
 {"address": "0x19A851974E66549a4C4D1Ec6e92223D0e1FB8897", "name": "BridgeImplementation", "compiler": "0.8.4", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "7/9/2022"}
 {"address": "0xdb8e9efb0337d95224f9cd45fbb548c5b4241296", "name": "IBOTKiller", "compiler": "0.8.14", "balance": "0 AVAX", "txcount": 7, "settings": "", "date": "7/9/2022"}
 {"address": "0x68Df4cd9240594cE8561d2694e7E7134DD782F9f", "name": "SeedContract", "compiler": "0.8.14", "balance": "0 AVAX", "txcount": 7, "settings": "", "date": "7/9/2022"}
+{"address": "0x1041a783F8A6a3F29A2d88a03219dDBFA6858C73", "name": "BondDepositoryV2", "compiler": "0.8.13", "balance": "0 AVAX", "txcount": 1, "settings": "-", "date": "7/10/2022"}
+{"address": "0xEd15C51510f0ef985406eA9dCD4A4684b930Ba2f", "name": "lendingSwitchErc20Debug", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 6, "settings": "", "date": "7/10/2022"}
+{"address": "0x73ad0e9760438a1cF9D7615fe8b6f7271d5e2C0f", "name": "lendingSwitchErc20Debug", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 7, "settings": "", "date": "7/10/2022"}
+{"address": "0xcB98AEcEb2C2b78348293784092baE4b96da8A92", "name": "lendingSwitchErc20Debug", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "7/10/2022"}
+{"address": "0x0b23Be05A649423F6A6384397347f03462efEFCd", "name": "JellyBeanClan", "compiler": "0.8.7", "balance": "0.8 AVAX", "txcount": 8, "settings": "", "date": "7/10/2022"}
+{"address": "0x5055a3f8896f44f299f8de26eaa110878293db99", "name": "PapyrusSoulbound", "compiler": "0.8.4", "balance": "0 AVAX", "txcount": 6, "settings": "-", "date": "7/10/2022"}
+{"address": "0xc1447e4cd995e49dd34fb6a434db372dd9769887", "name": "FullFeatureToken", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 0, "settings": "", "date": "7/10/2022"}
+{"address": "0x4765fb1D71F57f762c24B85318149260F0E27A93", "name": "SmolrDoomers", "compiler": "0.8.4", "balance": "0 AVAX", "txcount": 112, "settings": "", "date": "7/10/2022"}
+{"address": "0x557d1f707492D1c11c52F39A82518DFfE51BCCD6", "name": "YobiNinjas", "compiler": "0.8.14", "balance": "0 AVAX", "txcount": 5, "settings": "", "date": "7/9/2022"}
+{"address": "0x7a79625b9d70a0034d83fa1617b505b3d91cec55", "name": "BOOhoo", "compiler": "0.8.9", "balance": "0 AVAX", "txcount": 6, "settings": "-", "date": "7/9/2022"}
+{"address": "0x11a99D06b5A82E366e6162b62c5729466b747A26", "name": "SmolrDoomers", "compiler": "0.8.4", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "7/9/2022"}
+{"address": "0x6878294588feB8534321ff469c2217CA4C9d65B8", "name": "USDC", "compiler": "0.8.13", "balance": "0 AVAX", "txcount": 1, "settings": "-", "date": "7/9/2022"}
+{"address": "0x45EcCF981E7D1F46149B25A773208F153aBFe0F1", "name": "USDC", "compiler": "0.8.13", "balance": "0 AVAX", "txcount": 4, "settings": "-", "date": "7/9/2022"}
