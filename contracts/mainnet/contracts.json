@@ -23440,3 +23440,6 @@
 {"address": "0xEb9FcFDC9EfDC17c1EC5E1dc085B98485da213D6", "name": "Outbox", "compiler": "0.8.13", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "7/11/2022"}
 {"address": "0x8F7454AC98228f3504Bb91eA3D8Adafe6406110A", "name": "OutboxValidatorManager", "compiler": "0.8.13", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "7/11/2022"}
 {"address": "0x0230dcfa36a49c5f1a24f7015f2d96c90e0494d2", "name": "BOOhoo", "compiler": "0.8.1", "balance": "0 AVAX", "txcount": 7, "settings": "-", "date": "7/11/2022"}
+{"address": "0x10D28C43Cb3F110449E9AAe909393041EEAfb4ca", "name": "Multicall", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 1, "settings": "-", "date": "7/13/2022"}
+{"address": "0x39Abc4eE0B49f63f59C692bB5c195bC50D76Fc95", "name": "StrategyCommonChefLPBsc", "compiler": "0.6.12", "balance": "0 AVAX", "txcount": 5, "settings": "", "date": "7/13/2022"}
+{"address": "0xdb83493f22384efad2600ac3cbfec9703062a275", "name": "StrategyCommonChefLPBsc", "compiler": "0.6.12", "balance": "0 AVAX", "txcount": 3, "settings": "", "date": "7/13/2022"}
