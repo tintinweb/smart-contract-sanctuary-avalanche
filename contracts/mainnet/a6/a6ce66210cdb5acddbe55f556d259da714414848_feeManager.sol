@@ -1,0 +1,475 @@
+/**
+ *Submitted for verification at snowtrace.io on 2022-08-29
+*/
+
+//SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.8.13;
+library SafeMath {
+    function tryAdd(uint256 a, uint256 b) internal pure returns (bool, uint256) {
+        unchecked {
+            uint256 c = a + b;
+            if (c < a) return (false, 0);
+            return (true, c);
+        }
+    }
+
+    function trySub(uint256 a, uint256 b) internal pure returns (bool, uint256) {
+        unchecked {
+            if (b > a) return (false, 0);
+            return (true, a - b);
+        }
+    }
+
+    function tryMul(uint256 a, uint256 b) internal pure returns (bool, uint256) {
+        unchecked {
+            if (a == 0) return (true, 0);
+            uint256 c = a * b;
+            if (c / a != b) return (false, 0);
+            return (true, c);
+        }
+    }
+
+    function tryDiv(uint256 a, uint256 b) internal pure returns (bool, uint256) {
+        unchecked {
+            if (b == 0) return (false, 0);
+            return (true, a / b);
+        }
+    }
+
+    function tryMod(uint256 a, uint256 b) internal pure returns (bool, uint256) {
+        unchecked {
+            if (b == 0) return (false, 0);
+            return (true, a % b);
+        }
+    }
+    function add(uint256 a, uint256 b) internal pure returns (uint256) {
+        return a + b;
+    }
+
+    function sub(uint256 a, uint256 b) internal pure returns (uint256) {
+        return a - b;
+    }
+
+    function mul(uint256 a, uint256 b) internal pure returns (uint256) {
+        return a * b;
+    }
+
+    function div(uint256 a, uint256 b) internal pure returns (uint256) {
+        return a / b;
+    }
+
+    function mod(uint256 a, uint256 b) internal pure returns (uint256) {
+        return a % b;
+    }
+
+    function sub(
+        uint256 a,
+        uint256 b,
+        string memory errorMessage
+    ) internal pure returns (uint256) {
+        unchecked {
+            require(b <= a, errorMessage);
+            return a - b;
+        }
+    }
+
+    function div(
+        uint256 a,
+        uint256 b,
+        string memory errorMessage
+    ) internal pure returns (uint256) {
+        unchecked {
+            require(b > 0, errorMessage);
+            return a / b;
+        }
+    }
+
+    function mod(
+        uint256 a,
+        uint256 b,
+        string memory errorMessage
+    ) internal pure returns (uint256) {
+        unchecked {
+            require(b > 0, errorMessage);
+            return a % b;
+        }
+    }
+}
+library nebuLib {
+		function addressInList(address[] memory _list, address _account) internal pure returns (bool){
+			for(uint i=0;i<_list.length;i++){
+				if(_account == _list[i]){
+					return true;
+				}
+			}
+			return false;
+		}
+		function mainBalance(address _account) internal returns (uint256){
+			uint256 _balance = _account.balance;
+			return _balance;
+		}
+		function getMultiple(uint256 _x,uint256 _y)internal pure returns(uint256){
+			uint256 Zero = 0;
+			if (_y == Zero || _x == Zero || _x > _y){
+				return Zero;
+			}
+			uint256 z = _y;
+			uint256 i = 0;
+			while(z >= _x){
+				z -=_x;
+				i++;			
+			}
+			return i;
+		}
+}
+
+// File: @openzeppelin/contracts/utils/Context.sol
+// OpenZeppelin Contracts v4.4.1 (utils/Context.sol)
+pragma solidity ^0.8.0;
+abstract contract Context {
+    function _msgSender() internal view virtual returns (address) {
+        return msg.sender;
+    }
+    function _msgData() internal view virtual returns (bytes calldata) {
+        return msg.data;
+    }
+}
+
+// File: @openzeppelin/contracts/access/Ownable.sol
+// OpenZeppelin Contracts v4.4.1 (access/Ownable.sol)
+pragma solidity ^0.8.0;
+abstract contract Ownable is Context {
+    address private _owner;
+
+    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
+    constructor() {
+        _transferOwnership(_msgSender());
+    }
+    modifier onlyOwner() {
+        _checkOwner();
+        _;
+    }
+    function owner() public view virtual returns (address) {
+        return _owner;
+    }
+    function _checkOwner() internal view virtual {
+        require(owner() == _msgSender(), "Ownable: caller is not the owner");
+    }
+    function renounceOwnership() public virtual onlyOwner {
+        _transferOwnership(address(0));
+    }
+
+    
+    function _transferOwnership(address newOwner) internal virtual {
+        address oldOwner = _owner;
+        _owner = newOwner;
+        emit OwnershipTransferred(oldOwner, newOwner);
+    }
+}
+abstract contract ProtoManager is Context {
+    function getDeadStarsData(address _account, uint256 _x) external virtual returns(string memory,uint256,uint256,uint256,uint256,uint256,uint256,bool,bool);
+    function protoAccountData(address _account, uint256 _x) external virtual returns(string memory,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256);
+    function protoAccountExists(address _account) external virtual returns (bool);
+    function getCollapseDate(address _account,uint256 _x) external view virtual returns(uint256);
+    function getdeadStarsLength(address _account) external view virtual returns(uint256);
+    function getProtoAccountsLength() external view virtual returns(uint256);
+    function getProtoAddress(uint256 _x) external view virtual returns(address);
+    function getProtoStarsLength(address _account) external view virtual returns(uint256);
+}
+abstract contract overseer is Context {
+	 function getMultiplier(uint256 _x) external virtual returns(uint256);
+	 function getBoostPerMin(uint256 _x) external view virtual returns(uint256);
+	 function getRewardsPerMin() external view virtual returns (uint256);
+	 function getCashoutRed(uint256 _x) external view virtual returns (uint256);
+	 function getNftTimes(address _account, uint256 _id,uint256 _x) external view virtual returns(uint256);
+	 function isStaked(address _account) internal virtual returns(bool);
+	 function getNftAmount(address _account, uint256 _id) external virtual returns(uint256);
+	 function getFee() external view virtual returns(uint256);
+	 function getModFee(uint256 _val) external view virtual returns(uint256);
+	 function getNftPrice(uint _val) external view virtual returns(uint256);
+	 function getEm() external view virtual returns (uint256);
+   
+}
+contract feeManager is Ownable{
+	using SafeMath for uint256;
+    struct TOTALFEES{
+    	uint256 total;
+    	uint256 protos;
+	uint256 feesOwed;
+	uint256 futureFees;
+	uint256 feesPaid; 
+	uint256 collapsed;
+    }
+    struct PROTOOWNERS {
+    	string name;
+    	uint256 collapseDate;
+    	uint256 nextDue;
+    	uint256 futureFees;
+    	uint256 feeFroze;
+    	bool owed;
+    	bool full;
+    	bool insolvent;
+    	bool imploded;
+    }
+    uint256 public feePeriod;
+    uint256 public gracePeriod;
+    uint256 public protoLife;
+    uint256 public maxFeePayment;
+    uint256 public maxPayPeriods;
+    uint256[] public rndmLs;
+    bool public fees;
+    
+    address payable treasury;
+    uint256 public Zero =0;
+    address public _overseer;
+    address public Guard;
+
+    overseer public over;
+    address public _ProtoManager;
+    ProtoManager public protoMgr;
+    mapping(address => TOTALFEES) public totalFees;
+    mapping(address => PROTOOWNERS[]) public protoOwners;
+    address[] public Accounts;
+    address[] public Managers;
+    modifier onlyGuard() {require(owner() == _msgSender() || Guard == _msgSender(), "NOT_GUARD");_;}
+    modifier managerOnly() {require(nebuLib.addressInList(Managers,msg.sender)== true); _;}
+    constructor(address[] memory addresses, address payable _treasury, uint[] memory _fees){
+       for(uint i = 0;i<addresses.length;i++){
+    		require(addresses[i] != address(0) && addresses[i] != address(this),"your constructor addresses contain either burn or this");
+    	}
+    	_overseer = addresses[0];
+    	over = overseer(_overseer);
+    	_ProtoManager = addresses[1];
+    	protoMgr = ProtoManager(_ProtoManager);
+    	treasury = _treasury;
+    	for(uint i = 0;i<_fees.length;i++){
+    		rndmLs.push(_fees[i]* 1 days);
+    	}
+
+    	feePeriod = rndmLs[0];
+    	gracePeriod = rndmLs[1];
+    	protoLife = rndmLs[2];
+    	maxFeePayment = rndmLs[3];
+    	for(uint i = 0;i<_fees.length;i++){
+    		rndmLs.pop();
+    	}
+
+    	Managers.push(owner());
+    }
+    function createProtos(address _account,string memory _name) external onlyGuard() returns(uint256,uint256,uint256,bool,bool,bool,bool){
+    	    if(nebuLib.addressInList(Accounts,_account) == false){
+    	    	Accounts.push(_account);
+    	    }
+    	    uint256 froze = Zero;
+    	    if(fees == false){
+    	    	froze = block.timestamp;
+    	    }
+    	    uint256 nextDue = block.timestamp + gracePeriod;
+    	    PROTOOWNERS[] storage protos = protoOwners[_account];
+	    protos.push(PROTOOWNERS({
+	    	name:_name,
+	    	collapseDate:protoLife,
+	    	nextDue:block.timestamp + gracePeriod,
+	    	futureFees:Zero,
+	    	feeFroze:froze,
+    		owed:true,
+    		full:false,
+    		insolvent:true,
+    		imploded:false
+    		}));
+    	TOTALFEES storage tot = totalFees[address(this)];
+    	TOTALFEES storage actTot = totalFees[_account];
+    	tot.protos++;
+    	actTot.protos++;
+    	return (protoLife,nextDue,froze,true,false,true,false);
+    	}
+    function collapseProto(address _account,uint256 _x) external onlyGuard(){
+        PROTOOWNERS[] storage protos = protoOwners[_account];
+    	for(uint i=_x;i<protos.length;i++){
+    		if(i != protos.length-1){
+  			PROTOOWNERS storage proto_bef = protos[i];
+    			PROTOOWNERS storage proto_now = protos[i+1];
+    			proto_bef.collapseDate = proto_now.collapseDate;
+	    	        proto_bef.nextDue = proto_now.nextDue;
+	    	        proto_bef.feeFroze = proto_now.feeFroze;
+	    	        proto_bef.owed = proto_now.owed;
+	    	        proto_bef.full = proto_now.full;
+    		}
+    	}
+    	protos.pop();
+    	TOTALFEES storage tot = totalFees[address(this)];
+    	TOTALFEES storage acctTot = totalFees[_account];
+    	tot.protos--;
+    	acctTot.protos--;
+    	tot.collapsed++;
+    	acctTot.collapsed++;
+    }
+    function isLower(uint256 _x, uint256 _y) internal returns(uint256){
+	if(_x>_y){
+		return _y;	
+	}    
+	return _x;
+    }
+    function payFee() payable external {
+        address _account = msg.sender;
+        queryFees(_account);
+        TOTALFEES storage acctTot = totalFees[_account];
+        uint256 sent = msg.value;
+        uint256 fee = over.getFee();
+    	require(sent > fee,"you have not sent enough to pay a fee");
+    	uint256 balance =_account.balance;
+    	require(balance >= fee,"you do not hold enough to pay a fee");
+    	require(acctTot.total > 0,"you dont owe any fees");
+    	uint256 intervals = nebuLib.getMultiple(sent,fee);
+    	uint lowest = isLower(intervals,acctTot.feesOwed);
+    	uint256 returnBalance = balance;
+    	for(uint i = 0;i<lowest;i++) {
+    		if(acctTot.total >0 && balance >= fee){
+			treasury.transfer(fee);
+			recPayFees(_account);
+			returnBalance = sent.sub(fee);
+			balance = _account.balance;
+		}
+	}
+        if(returnBalance > 0){
+		payable(_account).transfer(returnBalance);
+	}
+    }
+    function queryFees(address _account) internal {
+    	TOTALFEES storage acctTot = totalFees[_account];
+	acctTot.protos = Zero;
+	acctTot.feesOwed = Zero;
+	acctTot.futureFees = Zero;
+	uint256 time = block.timestamp;
+	PROTOOWNERS[] storage protos = protoOwners[_account];
+	acctTot.protos = protos.length;
+	for(uint i = 0;i<protos.length;i++) {
+		PROTOOWNERS storage proto = protos[i];
+		proto.collapseDate = protoMgr.getCollapseDate(_account,i);
+		proto.insolvent = false;
+		if(proto.nextDue < time){
+			uint256 timeLapsed = time - proto.nextDue;
+			proto.insolvent = true;
+			uint256 daysInsolvent = nebuLib.getMultiple(1 days, timeLapsed);
+			if(daysInsolvent >= uint256(5)){
+				proto.imploded = true;
+				acctTot.collapsed += 1;
+			}
+		}
+	    	uint256 timePaid = proto.nextDue - time;
+	    	if (fees == false){
+		    timePaid = proto.feeFroze;
+		}
+		uint256 periodsPaid = nebuLib.getMultiple(feePeriod,timePaid);
+		if (periodsPaid < 1){
+		    	proto.owed = true;
+		    	acctTot.feesOwed += 1;
+		}else{
+			proto.owed = false;
+			acctTot.futureFees += periodsPaid-1;
+		}
+	}
+    	
+    	for(uint i = 0;i<protos.length;i++) {
+    		PROTOOWNERS storage proto = protos[i];
+    		uint256 remainingLife = proto.collapseDate - block.timestamp;
+    		uint256 currMax = maxFeePayment - (proto.nextDue - block.timestamp);
+    		uint256 futMax = currMax.div(feePeriod);
+    		uint256 futLifeMax = remainingLife.div(feePeriod);
+    		if (proto.nextDue - block.timestamp < feePeriod){
+    			acctTot.feesOwed += 1;
+    			proto.owed = true;
+    		}else{
+    			proto.owed = false;
+    		}if(futMax > futLifeMax){
+	    		proto.futureFees += futLifeMax;
+	    		proto.futureFees = futLifeMax;
+	    	}else{
+	    		proto.futureFees += futMax;
+	    		proto.futureFees = futMax;
+	    	}
+	    	acctTot.total = acctTot.futureFees + acctTot.feesOwed;
+	    }
+	
+    }
+    function recPayFees(address _account) internal {
+        TOTALFEES storage acctTot = totalFees[_account];
+	PROTOOWNERS[] storage protos = protoOwners[_account];
+	for(uint i=0;i<protos.length;i++){
+		PROTOOWNERS storage proto = protos[i];
+		if(acctTot.feesOwed > 0){
+			if (acctTot.feesOwed > 0){
+				proto.owed = false;
+				acctTot.feesOwed -=1;
+				
+			}
+		}
+	}
+	for(uint i=0;i<protos.length;i++){
+	PROTOOWNERS storage proto = protos[i];
+		if(proto.futureFees > 0){
+			if (proto.futureFees > 0){
+				proto.futureFees -=1;
+
+			}
+		}
+	}
+	acctTot.total = acctTot.futureFees + acctTot.feesOwed;
+    }
+    function changeMaxPayment(uint256 _payments) external managerOnly() {
+    	maxFeePayment = _payments.mul(feePeriod);
+    }
+    function changeFeePeriod(uint256 _days) external managerOnly() {
+    	uint256 maxPeriods = nebuLib.getMultiple(feePeriod,maxFeePayment);
+    	feePeriod = _days.mul(1 days);
+    	maxFeePayment = maxPeriods.mul(feePeriod);
+    }
+    function pauseFees(bool _x) external managerOnly() {
+    	if(fees != _x){
+    		if (fees == true){
+	    		uint256 fee_time = block.timestamp;
+	    		for(uint j = 0;j<Accounts.length;j++){
+	    			PROTOOWNERS[] storage protos = protoOwners[Accounts[j]];
+	    			for(uint i = 0;i<protos.length;i++) {
+	    			PROTOOWNERS storage proto = protos[i];
+	    				proto.nextDue = proto.feeFroze + fee_time;
+	    			}
+	    		}
+	    	}else if (fees == false){
+	    		uint256 fee_time = block.timestamp;
+	    		for(uint j = 0;j<Accounts.length;j++){
+	    			PROTOOWNERS[] storage protos = protoOwners[Accounts[j]];
+	    			for(uint i = 0;i<protos.length;i++) {
+	    			PROTOOWNERS storage proto = protos[i];
+	    				proto.feeFroze = proto.nextDue -fee_time;
+	    			}
+	    		}
+	    	}
+		fees = _x;	
+	}
+    }
+    function findFromName(address _account, string memory _name) internal view returns(uint256){
+    	    	PROTOOWNERS[] storage protos = protoOwners[_account];
+    	    	for(uint i = 0;i<protos.length;i++) {
+    			PROTOOWNERS storage proto = protos[i];
+    			if(keccak256(bytes(proto.name)) == keccak256(bytes(_name))){
+    				return i;
+    			}
+    		}
+    }
+    function viewFeeInfo(address _account,string memory _name) external returns(uint256,uint256,bool,bool,bool,bool){
+    	queryFees(_account);
+    	PROTOOWNERS[] storage protos = protoOwners[_account];
+    	PROTOOWNERS storage proto = protos[findFromName(_account,_name)];
+    	return (proto.nextDue,proto.feeFroze,proto.owed,proto.full,proto.insolvent,proto.imploded);
+    }
+    function getPeriodInfo() external returns (uint256,uint256,uint256){
+    	return(feePeriod,gracePeriod,protoLife);
+    }
+    function getAccountsLength() external view returns(uint256){
+    	return Accounts.length;
+    }
+    function accountExists(address _account) external view returns (bool){
+    	return nebuLib.addressInList(Accounts,_account);
+    }
+}
