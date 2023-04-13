@@ -1,0 +1,675 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+interface LinkTokenInterface {
+  function allowance(address owner, address spender) external view returns (uint256 remaining);
+
+  function approve(address spender, uint256 value) external returns (bool success);
+
+  function balanceOf(address owner) external view returns (uint256 balance);
+
+  function decimals() external view returns (uint8 decimalPlaces);
+
+  function decreaseApproval(address spender, uint256 addedValue) external returns (bool success);
+
+  function increaseApproval(address spender, uint256 subtractedValue) external;
+
+  function name() external view returns (string memory tokenName);
+
+  function symbol() external view returns (string memory tokenSymbol);
+
+  function totalSupply() external view returns (uint256 totalTokensIssued);
+
+  function transfer(address to, uint256 value) external returns (bool success);
+
+  function transferAndCall(
+    address to,
+    uint256 value,
+    bytes calldata data
+  ) external returns (bool success);
+
+  function transferFrom(
+    address from,
+    address to,
+    uint256 value
+  ) external returns (bool success);
+}
+
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+interface VRFV2WrapperInterface {
+  /**
+   * @return the request ID of the most recent VRF V2 request made by this wrapper. This should only
+   * be relied option within the same transaction that the request was made.
+   */
+  function lastRequestId() external view returns (uint256);
+
+  /**
+   * @notice Calculates the price of a VRF request with the given callbackGasLimit at the current
+   * @notice block.
+   *
+   * @dev This function relies on the transaction gas price which is not automatically set during
+   * @dev simulation. To estimate the price at a specific gas price, use the estimatePrice function.
+   *
+   * @param _callbackGasLimit is the gas limit used to estimate the price.
+   */
+  function calculateRequestPrice(uint32 _callbackGasLimit) external view returns (uint256);
+
+  /**
+   * @notice Estimates the price of a VRF request with a specific gas limit and gas price.
+   *
+   * @dev This is a convenience function that can be called in simulation to better understand
+   * @dev pricing.
+   *
+   * @param _callbackGasLimit is the gas limit used to estimate the price.
+   * @param _requestGasPriceWei is the gas price in wei used for the estimation.
+   */
+  function estimateRequestPrice(uint32 _callbackGasLimit, uint256 _requestGasPriceWei) external view returns (uint256);
+}
+
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import "./interfaces/LinkTokenInterface.sol";
+import "./interfaces/VRFV2WrapperInterface.sol";
+
+/** *******************************************************************************
+ * @notice Interface for contracts using VRF randomness through the VRF V2 wrapper
+ * ********************************************************************************
+ * @dev PURPOSE
+ *
+ * @dev Create VRF V2 requests without the need for subscription management. Rather than creating
+ * @dev and funding a VRF V2 subscription, a user can use this wrapper to create one off requests,
+ * @dev paying up front rather than at fulfillment.
+ *
+ * @dev Since the price is determined using the gas price of the request transaction rather than
+ * @dev the fulfillment transaction, the wrapper charges an additional premium on callback gas
+ * @dev usage, in addition to some extra overhead costs associated with the VRFV2Wrapper contract.
+ * *****************************************************************************
+ * @dev USAGE
+ *
+ * @dev Calling contracts must inherit from VRFV2WrapperConsumerBase. The consumer must be funded
+ * @dev with enough LINK to make the request, otherwise requests will revert. To request randomness,
+ * @dev call the 'requestRandomness' function with the desired VRF parameters. This function handles
+ * @dev paying for the request based on the current pricing.
+ *
+ * @dev Consumers must implement the fullfillRandomWords function, which will be called during
+ * @dev fulfillment with the randomness result.
+ */
+abstract contract VRFV2WrapperConsumerBase {
+  LinkTokenInterface internal immutable LINK;
+  VRFV2WrapperInterface internal immutable VRF_V2_WRAPPER;
+
+  /**
+   * @param _link is the address of LinkToken
+   * @param _vrfV2Wrapper is the address of the VRFV2Wrapper contract
+   */
+  constructor(address _link, address _vrfV2Wrapper) {
+    LINK = LinkTokenInterface(_link);
+    VRF_V2_WRAPPER = VRFV2WrapperInterface(_vrfV2Wrapper);
+  }
+
+  /**
+   * @dev Requests randomness from the VRF V2 wrapper.
+   *
+   * @param _callbackGasLimit is the gas limit that should be used when calling the consumer's
+   *        fulfillRandomWords function.
+   * @param _requestConfirmations is the number of confirmations to wait before fulfilling the
+   *        request. A higher number of confirmations increases security by reducing the likelihood
+   *        that a chain re-org changes a published randomness outcome.
+   * @param _numWords is the number of random words to request.
+   *
+   * @return requestId is the VRF V2 request ID of the newly created randomness request.
+   */
+  function requestRandomness(
+    uint32 _callbackGasLimit,
+    uint16 _requestConfirmations,
+    uint32 _numWords
+  ) internal returns (uint256 requestId) {
+    LINK.transferAndCall(
+      address(VRF_V2_WRAPPER),
+      VRF_V2_WRAPPER.calculateRequestPrice(_callbackGasLimit),
+      abi.encode(_callbackGasLimit, _requestConfirmations, _numWords)
+    );
+    return VRF_V2_WRAPPER.lastRequestId();
+  }
+
+  /**
+   * @notice fulfillRandomWords handles the VRF V2 wrapper response. The consuming contract must
+   * @notice implement it.
+   *
+   * @param _requestId is the VRF V2 request ID.
+   * @param _randomWords is the randomness result.
+   */
+  function fulfillRandomWords(uint256 _requestId, uint256[] memory _randomWords) internal virtual;
+
+  function rawFulfillRandomWords(uint256 _requestId, uint256[] memory _randomWords) external {
+    require(msg.sender == address(VRF_V2_WRAPPER), "only VRF V2 wrapper can fulfill");
+    fulfillRandomWords(_requestId, _randomWords);
+  }
+}
+
+// SPDX-License-Identifier: MIT
+// OpenZeppelin Contracts (last updated v4.7.0) (access/Ownable.sol)
+
+pragma solidity ^0.8.0;
+
+import "../utils/Context.sol";
+
+/**
+ * @dev Contract module which provides a basic access control mechanism, where
+ * there is an account (an owner) that can be granted exclusive access to
+ * specific functions.
+ *
+ * By default, the owner account will be the one that deploys the contract. This
+ * can later be changed with {transferOwnership}.
+ *
+ * This module is used through inheritance. It will make available the modifier
+ * `onlyOwner`, which can be applied to your functions to restrict their use to
+ * the owner.
+ */
+abstract contract Ownable is Context {
+    address private _owner;
+
+    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
+
+    /**
+     * @dev Initializes the contract setting the deployer as the initial owner.
+     */
+    constructor() {
+        _transferOwnership(_msgSender());
+    }
+
+    /**
+     * @dev Throws if called by any account other than the owner.
+     */
+    modifier onlyOwner() {
+        _checkOwner();
+        _;
+    }
+
+    /**
+     * @dev Returns the address of the current owner.
+     */
+    function owner() public view virtual returns (address) {
+        return _owner;
+    }
+
+    /**
+     * @dev Throws if the sender is not the owner.
+     */
+    function _checkOwner() internal view virtual {
+        require(owner() == _msgSender(), "Ownable: caller is not the owner");
+    }
+
+    /**
+     * @dev Leaves the contract without owner. It will not be possible to call
+     * `onlyOwner` functions anymore. Can only be called by the current owner.
+     *
+     * NOTE: Renouncing ownership will leave the contract without an owner,
+     * thereby removing any functionality that is only available to the owner.
+     */
+    function renounceOwnership() public virtual onlyOwner {
+        _transferOwnership(address(0));
+    }
+
+    /**
+     * @dev Transfers ownership of the contract to a new account (`newOwner`).
+     * Can only be called by the current owner.
+     */
+    function transferOwnership(address newOwner) public virtual onlyOwner {
+        require(newOwner != address(0), "Ownable: new owner is the zero address");
+        _transferOwnership(newOwner);
+    }
+
+    /**
+     * @dev Transfers ownership of the contract to a new account (`newOwner`).
+     * Internal function without access restriction.
+     */
+    function _transferOwnership(address newOwner) internal virtual {
+        address oldOwner = _owner;
+        _owner = newOwner;
+        emit OwnershipTransferred(oldOwner, newOwner);
+    }
+}
+
+// SPDX-License-Identifier: MIT
+// OpenZeppelin Contracts (last updated v4.6.0) (token/ERC20/IERC20.sol)
+
+pragma solidity ^0.8.0;
+
+/**
+ * @dev Interface of the ERC20 standard as defined in the EIP.
+ */
+interface IERC20 {
+    /**
+     * @dev Emitted when `value` tokens are moved from one account (`from`) to
+     * another (`to`).
+     *
+     * Note that `value` may be zero.
+     */
+    event Transfer(address indexed from, address indexed to, uint256 value);
+
+    /**
+     * @dev Emitted when the allowance of a `spender` for an `owner` is set by
+     * a call to {approve}. `value` is the new allowance.
+     */
+    event Approval(address indexed owner, address indexed spender, uint256 value);
+
+    /**
+     * @dev Returns the amount of tokens in existence.
+     */
+    function totalSupply() external view returns (uint256);
+
+    /**
+     * @dev Returns the amount of tokens owned by `account`.
+     */
+    function balanceOf(address account) external view returns (uint256);
+
+    /**
+     * @dev Moves `amount` tokens from the caller's account to `to`.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a {Transfer} event.
+     */
+    function transfer(address to, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Returns the remaining number of tokens that `spender` will be
+     * allowed to spend on behalf of `owner` through {transferFrom}. This is
+     * zero by default.
+     *
+     * This value changes when {approve} or {transferFrom} are called.
+     */
+    function allowance(address owner, address spender) external view returns (uint256);
+
+    /**
+     * @dev Sets `amount` as the allowance of `spender` over the caller's tokens.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * IMPORTANT: Beware that changing an allowance with this method brings the risk
+     * that someone may use both the old and the new allowance by unfortunate
+     * transaction ordering. One possible solution to mitigate this race
+     * condition is to first reduce the spender's allowance to 0 and set the
+     * desired value afterwards:
+     * https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729
+     *
+     * Emits an {Approval} event.
+     */
+    function approve(address spender, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Moves `amount` tokens from `from` to `to` using the
+     * allowance mechanism. `amount` is then deducted from the caller's
+     * allowance.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a {Transfer} event.
+     */
+    function transferFrom(
+        address from,
+        address to,
+        uint256 amount
+    ) external returns (bool);
+}
+
+// SPDX-License-Identifier: MIT
+// OpenZeppelin Contracts v4.4.1 (utils/Context.sol)
+
+pragma solidity ^0.8.0;
+
+/**
+ * @dev Provides information about the current execution context, including the
+ * sender of the transaction and its data. While these are generally available
+ * via msg.sender and msg.data, they should not be accessed in such a direct
+ * manner, since when dealing with meta-transactions the account sending and
+ * paying for execution may not be the actual sender (as far as an application
+ * is concerned).
+ *
+ * This contract is only required for intermediate, library-like contracts.
+ */
+abstract contract Context {
+    function _msgSender() internal view virtual returns (address) {
+        return msg.sender;
+    }
+
+    function _msgData() internal view virtual returns (bytes calldata) {
+        return msg.data;
+    }
+}
+
+//SPDX-License-Identifier: MIT
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                             @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                                    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                                         @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                                             @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                                                @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                                                    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                                                      @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                                                         @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                                                           @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                      @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@      @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@        @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@          @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@           @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@             @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@              @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@              @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@             @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@           @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@         @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@        @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@      @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                      @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                                                           @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                                                         @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                                                      @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                                                    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                                                @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                                             @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                                        @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                                   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                             @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+/**
+ * @dev: @brougkr
+ */
+pragma solidity 0.8.17;
+import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
+import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import {VRFV2WrapperConsumerBase} from "@chainlink/contracts/src/v0.8/VRFV2WrapperConsumerBase.sol";
+contract MPAIArtistIDs is Ownable, VRFV2WrapperConsumerBase
+{    
+    struct RequestStatus 
+    {
+        uint paid;   // amount paid in link
+        bool fulfilled; // whether the request has been successfully fulfilled
+        uint[] randomWords; // random results
+    }
+
+    mapping(uint=>uint) public OrderIndexes;                  // `Index` => `RandomizedOrderIndex` - (Post-Randomized)
+    mapping(uint=>uint) public ArtistID;                      // `TokenID` => `ArtistID` - (Post-Randomized)
+    mapping(uint=>string) public ArtistNames;                 // `ArtistID` => `Name (Post-Randomization)`
+    mapping(uint=>string) public _ArtistNames;                // `ArtistID` => `Name (Pre-Randomized)`
+    mapping(uint=>bool) public _ArtistNameMapped;             // `ArtistID` => `Mapped`
+    mapping(uint=>uint) public _ArtistIDNumLimiter;           // `ArtistID` => `Allowance`
+    mapping(uint=>bool) public _MintPackIndex;        // `Index` => IsMintPackStartingIndex
+    mapping(uint=>bool) public _OrderIndexMapped;             // `OrderIndex` => `Mapped`
+    mapping(uint => RequestStatus) public s_requests;         // `RequestID` => `requestStatus`
+
+    uint public _Status;
+    uint public _GeneratedArtistIDs;
+    uint public _GeneratedOrderIDs = 176;
+    uint public _AttemptedGeneratedOrderIndex;
+    uint public _CurrentDrawIndexArtistIDs;
+    uint public _CurrentDrawIndexArtistNames;
+    uint public _CurrentTokenIndexArtistIDs;
+    uint public _CurrentOrderIndex = 176;
+    uint internal _ArtistMapped;
+    uint private immutable _Limit = 100;
+    uint[] public _RandomResults;                                                 
+    uint[] public _MintPackIndexes;
+    uint[] public requestIds;                 // Array of request IDs
+    uint32 public numWords = 1;               // Number of random words to request from Chainlink VRF
+    uint16 public requestConfirmations = 1;   // Number of confirmations to wait for before updating the request status
+    uint public lastRequestId;                // Last request ID
+
+    event RandomArtistIDsSeeded(uint[] ArtistIDs);
+    event randomnessFulfilled(bytes32 requestId, uint randomResult);
+    event ArtistIDs(uint[] _RandomResults, uint[] expandedResults);
+    event ArtistIDsMapped(uint[] _RandomResults, uint[] expandedResults);
+    event ArtistNamesSeeded(uint[] Indexes, string[] Names);
+    event ArtistNameMapped();
+    event RequestSent(uint requestId, uint32 numWords);
+    event RequestFulfilled(uint requestId, uint[] randomWords, uint payment);
+
+    constructor() VRFV2WrapperConsumerBase(0x5947BB275c521040051D82396192181b413227A3, 0x721DFbc5Cfe53d32ab00A9bdFa605d3b8E1f3f42)
+    {
+        // Artist Pre-Randomized Names (In Alphabetical Order)
+        _ArtistNames[0] = "Claire Silver";                // Artist #1
+        _ArtistNames[1] = "Ganbrood";                     // Artist #2
+        _ArtistNames[2] = "Helena Sarin";                 // Artist #3
+        _ArtistNames[3] = "Holly Herndon & Mat Dryhurst"; // Artist #4
+        _ArtistNames[4] = "Huemin";                       // Artist #5
+        _ArtistNames[5] = "Ivona Tau";                    // Artist #6
+        _ArtistNames[6] = "Jenni Pasanen";                // Artist #7
+        _ArtistNames[7] = "Kevin Abosch";                 // Artist #8
+        _ArtistNames[8] = "Mario Klingemann";             // Artist #9
+        _ArtistNames[9] = "Pindar van Arman";             // Artist #10
+        _ArtistNames[10] = "Sofia Crespo";                // Artist #11
+
+        _ArtistIDNumLimiter[0] = 36;
+        _ArtistIDNumLimiter[1] = 36;
+        _ArtistIDNumLimiter[2] = 36;
+        _ArtistIDNumLimiter[3] = 36;
+        _ArtistIDNumLimiter[4] = 36;
+        _ArtistIDNumLimiter[5] = 36;
+        _ArtistIDNumLimiter[6] = 36;
+        _ArtistIDNumLimiter[7] = 36;
+        _ArtistIDNumLimiter[8] = 36;
+        _ArtistIDNumLimiter[9] = 36;
+        _ArtistIDNumLimiter[10] = 36;
+
+        _RandomResults.push(18648067038877702176307387586432307159514826135495548375197025980730374615135);
+        _RandomResults.push(18648067038877702176307387586432307159514826135495548375197025980730374615135);
+
+        // for(uint x; x < 176; x++) // TokenIDs 0-175
+        // { 
+        //     ArtistID[x] = (x%11); 
+        //     OrderIndexes[x] = x;
+        // }   
+        // for(uint x; x < 220; x++) // TokenIDs 880-1099
+        // { 
+        //     uint amt = 880 + x;
+        //     ArtistID[amt] = (x%11); 
+        //     OrderIndexes[amt] = amt;
+        // } 
+
+        for(uint x; x < 11; x++) { _MintPackIndex[x * 11] = true; }
+        for(uint x; x < 20; x++) { _MintPackIndex[880 + (x * 11)] = true; }
+    } 
+
+    /*-----------------
+     * VIEW FUNCTIONS *
+    ------------------*/
+    
+    /**
+     * @dev Returns Artist Names
+     */
+    function ViewAllArtistNames() public view returns (string[] memory)
+    {
+        string[] memory __ArtistNames = new string[](11);
+        for(uint x; x < 11; x++)
+        {
+            __ArtistNames[x] = ArtistNames[x];
+        }
+        return __ArtistNames;
+    }
+
+    /**
+     * @dev Returns An Array Of ArtistIDs Corresponding To Input TokenIDs 
+     */
+    function ViewArtistIDsByTokenIDs(uint[] calldata TokenIDs) public view returns(uint[] memory)
+    {   
+        uint[] memory _ArtistIDs = new uint[](TokenIDs.length);
+        for(uint TokenID; TokenID < TokenIDs.length; TokenID++)
+        {
+            _ArtistIDs[TokenID] = ArtistID[TokenIDs[TokenID]];
+        }
+        return _ArtistIDs;
+    }
+
+    /**
+     * @dev Returns An Array Of ArtistIDs Corresponding To TokenIDs 0-999
+     */
+    function ViewAllArtistIDs() public view returns(uint[] memory)
+    {
+        uint[] memory __ArtistIDs = new uint[](1100);
+        for(uint TokenID; TokenID < 1100; TokenID++)
+        {
+            __ArtistIDs[TokenID] = ArtistID[TokenID];
+        }
+        return __ArtistIDs;
+    }
+
+    /**
+     * @dev Returns An Array Of Randomized OrderIDs
+     */
+    function ViewAllOrderIDs() public view returns(uint[] memory)
+    {
+        uint[] memory __OrderIDs = new uint[](1100);
+        for(uint OrderID; OrderID < __OrderIDs.length; OrderID++)
+        {
+            __OrderIDs[OrderID] = OrderIndexes[OrderID];
+        }
+        return __OrderIDs;
+    }
+
+    /**
+     * @dev Returns A Singular ArtistID
+     */
+    function ViewArtistID(uint TokenID) public view returns(uint) { return ArtistID[TokenID]; }
+
+    /*----------------
+     * VRF FUNCTIONS *
+    -----------------*/
+
+    /**
+     * @dev Withdraws ERC20 From Contract
+     */
+    function ____WithdrawERC20(address ERC20) external onlyOwner
+    {
+        IERC20(ERC20).transferFrom(address(this), msg.sender, IERC20(ERC20).balanceOf(address(this)));
+    }
+
+    /**
+     * @dev Withdraws ERC20 From Contract
+     */
+    function __WithdrawERC20(address ERC20) external onlyOwner
+    {
+        IERC20 token = IERC20(ERC20);
+        token.transfer(msg.sender, token.balanceOf(address(this)));
+    }
+
+    /**
+     * @dev Step 1: Request Random Number From Chainlink VRF
+     */
+    function VRF0RequestRandomNumber(uint32 CallbackGasLimit) external onlyOwner returns (uint256 requestId)
+    {
+        requestId = requestRandomness(
+            CallbackGasLimit,
+            requestConfirmations,
+            numWords
+        );
+        s_requests[requestId] = RequestStatus({
+            paid: VRF_V2_WRAPPER.calculateRequestPrice(CallbackGasLimit),
+            randomWords: new uint256[](0),
+            fulfilled: false
+        });
+        requestIds.push(requestId);
+        lastRequestId = requestId;
+        emit RequestSent(requestId, numWords);
+        return requestId;
+    }
+
+    /**
+     * @dev Step 2: Seeds A Number Of Random OrderIDs Into The Contract Without Duplicates
+     */
+    function VRF1RandomGenerateOrderIDs(uint Amount) external onlyOwner
+    {
+        uint Range = _AttemptedGeneratedOrderIndex + Amount;
+        for(_AttemptedGeneratedOrderIndex; _AttemptedGeneratedOrderIndex < Range; _AttemptedGeneratedOrderIndex++) 
+        {
+            uint RandomOrderIndex = (uint(keccak256(abi.encode(_RandomResults[0], _AttemptedGeneratedOrderIndex))) % 881);
+            if(!_MintPackIndex[RandomOrderIndex] && RandomOrderIndex > 175 && RandomOrderIndex < 880 && !_OrderIndexMapped[RandomOrderIndex]) 
+            { 
+                _OrderIndexMapped[RandomOrderIndex] = true;
+                OrderIndexes[_GeneratedOrderIDs] = RandomOrderIndex; 
+                _GeneratedOrderIDs++;
+            }
+        }
+    }
+
+    /**
+     * @dev Step 3: Seeds A Number Of Random ArtistIDs Into The Contract
+     * (May Need To Be Run Multiple Times Until All Artist IDs Are Seeded)
+     */
+    function VRF2GenerateRandomArtistIDs(uint Amount) external onlyOwner
+    {
+        uint Range = _GeneratedArtistIDs + Amount;
+        for(_GeneratedArtistIDs; _GeneratedArtistIDs < Range; _GeneratedArtistIDs++) 
+        { 
+            uint __ArtistID = (uint(keccak256(abi.encode(_RandomResults[1], _GeneratedArtistIDs))) % 11);
+            if(_ArtistIDNumLimiter[__ArtistID] < _Limit)
+            {
+                _ArtistIDNumLimiter[__ArtistID]++;
+                ArtistID[OrderIndexes[_CurrentOrderIndex]] = __ArtistID;
+                _CurrentOrderIndex += 1;
+            }
+        }
+    }
+
+    /**
+     * @dev Step 5: Executes Artist Name Mapping
+     */
+    function VRF5ExecuteArtistNameMapping(uint Amount) external onlyOwner
+    {
+        uint Range = _CurrentDrawIndexArtistNames + Amount;
+        for(_CurrentDrawIndexArtistNames; _CurrentDrawIndexArtistNames < Range;)
+        {
+            uint ArtistIndex = (uint(keccak256(abi.encode(_RandomResults[2], _CurrentDrawIndexArtistNames))) % 11);
+            if(!_ArtistNameMapped[ArtistIndex])
+            {
+                _ArtistNameMapped[ArtistIndex] = true;
+                ArtistNames[_ArtistMapped] = _ArtistNames[ArtistIndex];
+                _ArtistMapped++;
+                emit ArtistNameMapped();
+            }
+            _CurrentDrawIndexArtistNames += 1;
+        }
+    }
+
+    /**
+     * @dev VRF Callback Function
+     */
+    function fulfillRandomWords(uint _requestId, uint[] memory _randomWords) internal override 
+    {
+        require(s_requests[_requestId].paid > 0, "request not found");
+        s_requests[_requestId].fulfilled = true;
+        s_requests[_requestId].randomWords = _randomWords;
+        _RandomResults.push(_randomWords[0]);
+        emit RequestFulfilled(_requestId, _randomWords, s_requests[_requestId].paid);
+    }
+}
